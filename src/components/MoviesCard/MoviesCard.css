@@ -1,15 +1,22 @@
 .element{
     display: flex;
     flex-direction: column ;
+    position: relative;
     max-width: 270px;
+    width: 100%; 
+
 }
+
 .element__wrapper{
     display: flex;
     justify-content: space-between;
-    max-width: 270px; 
+    
     align-items:center;
     margin-top: 10px;
+    margin-bottom: 25px;
+    position: relative;
 }
+
 
 .element__movie-name{
     color:#000000;
@@ -22,9 +29,9 @@
 
 .element__like-btn {
     border: none;
-    background-image: url('../../images/like-btn_active.svg');
     background-repeat: no-repeat;
     background-size: contain;
+    background-image: url('../../images/like-btn.svg');
     cursor: pointer;
     width: 24px;
     height: 24px;
@@ -34,5 +41,39 @@
     transition: opacity 0.5s ease-in;
     align-self: center;
     box-sizing: border-box;
+    background-color: white;
+  }
+
+  .element__like-btn_active{
+    background-image: url('../../images/like-btn_active.svg');
   }
   
+  .element__line{
+    content:"";
+    width: 100%;
+    border-bottom: 1px solid #E8E8E8;
+
+  }
+  .element__duration {
+    color: #A0A0A0;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    line-height: 13.31px;
+    font-weight: 400;
+    margin: 6px 0 0;
+
+  }
+
+  @media screen and (max-width: 900px) {
+    .element {
+      max-width: 339px;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .element {
+      max-width: 300px;
+    }
+  }
+  
+ 

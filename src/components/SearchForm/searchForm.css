@@ -1,8 +1,8 @@
 .search {
-    margin: 0 auto;
     padding-top: 65px;
     padding-bottom:47px ;
     box-sizing: border-box;
+    border: 1px solid red;
 }
 
 .search__form{
@@ -12,6 +12,7 @@
     width: 100%;
     margin: auto ;
     gap: 32px; 
+    border: 1px solid green;
 }
 .search__container{
     position: relative;
@@ -48,4 +49,16 @@
   position:absolute;
   right:0;
   bottom: 13px;
+}
+
+
+@media screen and (max-width: 900px) {
+  
+
+}
+
+@media screen and (max-width: 767px) {
+  .search__input {
+    font-size: 18px;
+  }
 }

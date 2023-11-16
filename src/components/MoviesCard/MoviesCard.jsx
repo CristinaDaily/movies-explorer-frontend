@@ -2,7 +2,8 @@ import React from 'react';
 import movie1 from '../../images/movie1.png';
 import './MoviesCard.css';
 
-function MoviesCard() {
+
+function MoviesCard({name, duration}) {
     return (
         <article className='element'>
           <img
@@ -10,15 +11,15 @@ function MoviesCard() {
             src={movie1}
             alt='Обложка фильма'
           />
-    
         <div className='element__wrapper'>
-          <h2 className='element__movie-name'>33 слова о дизайне</h2>
+          <h2 className='element__movie-name'>{name}</h2>
             <button
               type='button'
-              className='element__like-btn'
+              className='element__like-btn element__like-btn_active'
             ></button>
-            </div>
-            <p className='element__duration'>1ч42м</p>
+        </div>
+        <div className='element__line'></div>
+            <p className='element__duration'>{duration}</p>
         
       </article>
     );
