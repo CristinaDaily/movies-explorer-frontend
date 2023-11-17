@@ -1,7 +1,7 @@
 .movies{
   margin: 0 auto ;
   justify-items: center;
-  border: 1px solid red;
+
   padding-top: 70px ;
   box-sizing: border-box;
 }
@@ -14,7 +14,7 @@
   grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
   column-gap: 20px;
   row-gap: 38px;
-  border: 1px solid green;
+  
   justify-items: center;
 }
 
@@ -23,6 +23,7 @@
     grid-template-columns: repeat(auto-fit, minmax(min(339px, 100%), 1fr));
     column-gap: 30px;
     row-gap: 30px;
+    width:calc(100% - 60px);
     
   }
 }
@@ -31,5 +32,6 @@
   .movies__container {
     grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     row-gap: 34px;
+    width:calc(100% - 28px);
   }
 }

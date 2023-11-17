@@ -64,7 +64,17 @@
 
 }
 
+@media screen and (max-width: 900px) {
+  .footer {
+    width:calc(100% - 60px);
+  }
+}
+
 @media screen and (max-width: 767px) {
+    .footer {
+      width:calc(100% - 28px);
+    }
+    
     .footer__container{
       justify-items: center;
       grid-template-columns: 1fr;
