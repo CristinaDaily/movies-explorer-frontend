@@ -1,0 +1,151 @@
+.header {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    box-sizing: border-box;
+}
+
+.header_type_landing{
+    background-color: rgba(7, 48, 66, 1);
+}
+
+.header__container {
+    width:calc(100% - 140px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center ;
+}
+
+.header-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+}
+
+.header__link {
+   font-family: 'Inter', sans-serif;
+   font-size: 13px;
+   line-height: 18px;
+   font-weight: 400px; 
+   color: rgba(0, 0, 0, 1);
+}
+
+.header__link_type_movieapp{
+    color: rgba(0, 0, 0, 1);
+}
+
+.header__link_type_landing {
+   color:#FFFFFF; 
+}
+
+.header__link_active {
+  font-weight: 500px; 
+
+}
+
+
+
+.header__profile-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    border-radius: 20px;
+    width: 100px;
+    height: 32px;
+    padding-left: 11px;
+    padding-right: 3px ;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 12px;
+    font-weight: 500;
+
+  }
+
+  .header__profile-btn_type_movieapp {
+    background-color: #ffffff; 
+    box-shadow: 0px 0px 10px rgba(245, 245, 245, 1); 
+    color: rgba(34, 34, 34, 1); 
+
+  }
+
+  .header__profile-btn_type_landing{
+    
+    background-color: #2BE080; 
+    color: #000000; 
+  }
+  
+  .header__icon {
+    width: 10px;
+    height: 10px;
+    
+  }
+
+  .round {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: rgba(245, 245, 245, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order:99;
+  }
+
+  .round_type_movieapp {
+    background-color: rgba(245, 245, 245, 1);
+  }
+
+  .round_type_landing {
+    background-color:  rgba(249, 249, 249, 1);
+  }
+
+  .header__menu {
+    width: 44px;
+    height: 44px;
+  }
+
+  .header__registration{
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Inter' sans-serif;
+    font-size: 12px ;
+    line-height: 16px;
+    font-weight: 500;
+
+  }
+
+  .header__navigation {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .header__loggin{
+    width: 76px; 
+    height: 32px;
+    background-color: rgba(43, 224, 128, 1);
+    border: none;
+
+
+  }
+
+  .header__loggin_type_btn {
+    color: rgba(0, 0, 0, 1)
+  }
+  
+
+  
+ @media screen and (max-width: 900px) {
+ .header__container {
+    width:calc(100% - 60px);
+ }
+}
+
+@media screen and (max-width: 767px) {
+    .header__container {
+       width:calc(100% - 28px);
+    }
+   }

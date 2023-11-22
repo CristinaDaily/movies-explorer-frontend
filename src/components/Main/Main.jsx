@@ -3,9 +3,13 @@ import './Main.css'
 import landingLogo from '../../images/landing-logo.png'
 import photo from '../../images/photo.png';
 import arrowIcon from '../../images/arrow-icon.svg'
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 
 function Main() {
     return (
+        <div className='page'>
+        <Header />
         <main className="landing">
             <section className="intro">
                <div className='intro__wrapper'>
@@ -86,22 +90,22 @@ function Main() {
             <ul className="portfolio__list list">
                 <li className='portfolio__item'>
                 <a href="https://github.com/CristinaDaily/how-to-learn" className="portfolio__link link" target="_blank" rel="noreferrer" >Статичный сайт</a>
-                <i className='portfolio__icon'>
-                <img src={arrowIcon} alt="иконка для перехода" />
+                <i >
+                <img src={arrowIcon} alt="иконка для перехода"  className='portfolio__icon'/>
                 </i>
                 </li >
                 <div className="portfolio__line"></div>
                 <li className='portfolio__item'>
                 <a href="https://github.com/CristinaDaily/russian-travel" className="portfolio__link  link" target="_blank" rel="noreferrer" >Адаптивный сайт</a>
-                <i className='portfolio__icon'>
-                <img src={arrowIcon} alt="иконка для перехода" />
+                <i >
+                <img src={arrowIcon} alt="иконка для перехода"  className='portfolio__icon'/>
                 </i>
                 </li>
                 <div className="portfolio__line"></div>
                 <li className='portfolio__item'>
                 <a href="https://github.com/CristinaDaily/react-mesto-api-full-gha" className="portfolio__link  link" target="_blank" rel="noreferrer" >Oдностраничное приложение</a>
-                <i className='portfolio__icon'>
-                <img src={arrowIcon} alt="иконка для перехода" />
+                <i >
+                <img src={arrowIcon} alt="иконка для перехода"  className='portfolio__icon'/>
                 </i>
                 </li>
 
@@ -109,7 +113,10 @@ function Main() {
 
             </section>
         </main>
+        <Footer />
+        </div>
     );
-}
+} 
+
 
 export default Main;

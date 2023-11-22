@@ -1,3 +1,4 @@
+
 .landing {
     margin: 0 auto;
     
@@ -147,6 +148,7 @@
   max-width: calc(100% - 140px);
   width: 100%;
   margin: 0 auto;
+
 }
 
 .project{
@@ -423,6 +425,7 @@
   padding-top: 110px;
   padding-bottom: 125px;
   box-sizing: border-box;
+  
 }
 
 .about {
@@ -524,6 +527,12 @@
   
 }
 
+.portfolio__icon{
+  width: 18px;
+  height: 18px;
+
+}
+
 @media screen and (max-width: 900px) {
   .portfolio {
     padding-top: 90px;
@@ -568,18 +577,59 @@
   }
   .about {
     flex-direction: column;
+    margin-top: 60px;
+    margin-bottom: 70px;
+    align-items: center;
+
   }
   .about__wrapper{
     order: 99;
 
   }
   .about__picture{
-    width: 292px;
-    min-height: 354px;
+    width: 284px;
+    height: 354px;
     box-sizing: border-box;
   }
-  .about__background {
-    
-    max-width: 292px;
+
+  .about__name {
+    font-size: 30px;
+    line-height: 36px;
+    margin-top: 40px;
+
   }
+
+  .about__occupation{
+    font-size: 11px;
+    margin-top: 20px;
+  }
+
+  .about__background {
+    max-width: 284px;
+  }
+
+  .about__github {
+    margin-top:40px;
+    font-size: 11px;
+  }
+
+  .portfolio__title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .portfolio__list {
+    margin-top: 40px;
+  }
+
+  .portfolio__link {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .portfolio__icon {
+    width: 14px;
+    height: 14px;
+  }
+  
 }

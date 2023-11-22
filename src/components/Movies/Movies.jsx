@@ -4,10 +4,12 @@ import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import './movies.css';
 import Footer from '../Footer/Footer'
+import Header from '../Header/Header';
 
 function Movies() {
     return (
         <>
+        <Header />
         <main className='content' >
             <SearchForm placeholder="Фильм" />
             <MoviesCardList />
