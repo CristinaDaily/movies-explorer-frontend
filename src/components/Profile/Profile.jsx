@@ -1,44 +1,34 @@
 import React from 'react';
 import './Profile.css'
+import EditProfilePopup from '../EditPfofilePopup/EditProfilePopup';
+import Header from '../Header/Header';
 
 function Profile() {
     return (
+      <>
+      <Header />
         <div className='profile'>
-            <h2 className="profile__title">Добро пожаловать!</h2>
-            <form className='profile__form' >
-        <div className='input-container'>       
-        <label htmlFor='name-profile' className='profile__label'>
-          Имя
-        </label>        
-        <input
-        requited
-        id='name-profile'
-          name='profile-name'
-          type='text'
-          placeholder='Имя'
-          className='profile__input profile__input_type_name'
-        ></input>   
+            <h2 className="profile__title">Привет, Виталий!</h2>
+            <div className='profile__container' >
+        <div className='profile__wrapper'>  
+        <div className='profile__label'>Имя</div>     
+        <div className='profile__data'>Виталий</div>
         </div>   
         <div className='profile__dividing-line'></div>
-        <div className='input-container'>  
-        <label htmlFor='email-profile' className='profile__label'>
+        <div className='profile__wrapper'>  
+        <div  className='profile__label'>
           Email
-        </label>  
-        <input
-          required
-          id='email-profile'
-          name='profile-email'
-          type='email'
-          placeholder='Email'
-          className='profile__input profile__input_type_email'
-        />
+        </div>  
+        <div className='profile__data'>pochta@yandex.ru</div>
         </div> 
-        <span className='profile__error'></span>
-        <button type='submit' className='save__button'>
-        Сохранить
-        </button>
-            </form>
         </div>
+        <button className="profile__edit-btn ">Редактировать</button>
+        <button className="profile__exit ">Выйти из аккаунта</button>
+        
+            
+        </div>
+        <EditProfilePopup />
+        </>
     );
 }
 

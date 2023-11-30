@@ -8,7 +8,7 @@ function SearchForm(props) {
             <form className='search__form'>
             <div className='search__container'>   
             <input type="text" name='search__input' className='search__input' placeholder={props.placeholder} />
-            <button type='button' aria-label='кнопка поиска' className='search__button'>Найти</button> 
+            <button type='button' aria-label='кнопка поиска' className='search__button button'>Найти</button> 
             </div> 
             < FilterCheckbox />
             </form>

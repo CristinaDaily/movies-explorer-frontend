@@ -1,0 +1,127 @@
+.popup{
+  position: fixed;
+  top: 74px;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  transition: visibility 0.5s, opacity 0.5s ease-in-out;
+  justify-content: start;
+  display: none;
+}
+
+
+  .profile__form {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    line-height: 13px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    
+    
+
+  }
+
+  .input-container {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+  }
+
+  .profile__input {
+  font-family: inherit;
+  font-size: 11px;
+  border: 0;
+  width: 100;
+  height: 27px;
+  font-weight: 400;
+  box-sizing: border-box;
+  padding: 0;
+  color: #000000;
+  text-align: right;
+  
+  }
+
+  
+
+ 
+
+  
+  .profile__dividing-line{
+    content: '';
+    border-bottom: 1px solid #E8E8E8;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+  } 
+
+  .profile__error {
+    width: 100%;
+    color: rgba(255, 0, 76, 1);
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    margin-top: 187px;
+
+
+  }
+
+  .save__button {
+    margin-top: 20px;
+    height: 45px;
+    width: 100%;
+    color: rgba(255, 255, 255, 1);
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    background-color:  rgba(52, 86, 243, 1);
+    border-radius: 3px;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+
+  }
+
+  .save__button_disabled {
+    background-color:  #F8F8F8;
+    color: rgba(194, 194, 194, 1)
+  }
+
+  .profile__error {
+    width: 100%;
+    color: rgba(255, 0, 76, 1);
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    margin-top: 187px;
+
+
+  }
+
+  .save__button {
+    margin-top: 20px;
+    height: 45px;
+    width: 100%;
+    color: rgba(255, 255, 255, 1);
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    background-color:  rgba(52, 86, 243, 1);
+    border-radius: 3px;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+
+  }
+
+  .save__button_disabled {
+    background-color:  #F8F8F8;
+    color: rgba(194, 194, 194, 1)
+  }

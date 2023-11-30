@@ -8,46 +8,59 @@
     background-color: rgba(7, 48, 66, 1);
 }
 
+
+
 .header__container {
     width:calc(100% - 140px);
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center ;
+    justify-content: space-between;
+
 }
 
-.header-wrapper {
+.navigation{
+  flex: 1; 
+  display: flex;
+  flex-direction: row;
+  align-items: center ;
+  justify-content: space-between;
+  margin-left: 426px;
+}
+
+.navigation__wrapper {
     display: flex;
     flex-direction: row;
     gap: 16px;
 
 }
 
-.header__link {
+.navigation__link {
    font-family: 'Inter', sans-serif;
    font-size: 13px;
    line-height: 18px;
-   font-weight: 400px; 
+   font-weight: 400; 
    color: rgba(0, 0, 0, 1);
+   cursor: pointer;
 }
 
-.header__link_type_movieapp{
+.navigation__link_type_movieapp{
     color: rgba(0, 0, 0, 1);
 }
 
-.header__link_type_landing {
+.navigation__link_type_landing {
    color:#FFFFFF; 
 }
 
-.header__link_active {
-  font-weight: 500px; 
+.navigation__link_active {
+  font-weight: 500; 
 
 }
 
 
 
-.header__profile-btn{
+.navigation__profile-btn{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,23 +74,27 @@
     font-size: 13px;
     line-height: 12px;
     font-weight: 500;
+    position: relative;
+    cursor: pointer;
+    
 
   }
 
-  .header__profile-btn_type_movieapp {
+  .navigation__profile-btn_type_movieapp {
     background-color: #ffffff; 
-    box-shadow: 0px 0px 10px rgba(245, 245, 245, 1); 
+    box-shadow: 0px 3px 10px rgb(231, 229, 229); 
     color: rgba(34, 34, 34, 1); 
 
   }
 
-  .header__profile-btn_type_landing{
+
+  .navigation__profile-btn_type_landing{
     
     background-color: #2BE080; 
     color: #000000; 
   }
   
-  .header__icon {
+  .navigation__icon {
     width: 10px;
     height: 10px;
     

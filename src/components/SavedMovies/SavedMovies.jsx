@@ -1,10 +1,16 @@
 import React from 'react';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import SearchForm from '../SearchForm/SearchForm';
+import MoviesCardList from '../MoviesCardList/MoviesCardList'
 
 function SavedMovies() {
     return (
-        <div>
-            <h2>Компонент страницы с сохранёнными карточками фильмов</h2>
-        </div>
+        <>
+        <Header />
+        <SearchForm placeholder="Фильм"/>
+        <MoviesCardList />
+        </>
     );
 }
 
