@@ -14,7 +14,10 @@ function NotFound() {
         <section className='notFound'>
           <h2 className='notFound__title'>404</h2>
           <p className='notFound__subtitle'>Страница не найдена</p>
-          <a  href='#'className='notFound__back link'onClick={goBack}>Назад</a>
+          <button
+          type="button"
+          className='notFound__back link '
+          onClick={goBack}>Назад</button>
         </section>
     );
 }

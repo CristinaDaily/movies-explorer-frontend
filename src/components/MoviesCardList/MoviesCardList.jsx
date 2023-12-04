@@ -1,24 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
+import {Link, useLocation} from 'react-router-dom'
 import MoviesCard from '../MoviesCard/MoviesCard'; 
 import './MoviesCardList.css';
-import movies from '../../movies'
 import Preloader from '../Preloader/Preloader';
 
-function MoviesCardList() {
+function MoviesCardList({movieData}) {
       const [isLoading, setIsLoading] =  useState(false);
+      const location = useLocation();
+      const savedMoviePage = location.pathname === '/saved-movies';
+
 
 
     return (
         <section className='movies'>
-            <div className='movies__container'>
             {!isLoading ? (
-        movies.map((movie) => (
-          <MoviesCard name={movie.nameRU} duration={movie.duration} key={movie.id} />
-        ))
+    <div className={`movies__container ${savedMoviePage && 'movies__container_type_saved'}`}>
+      {movieData.map((movie) => (
+        <MoviesCard name={movie.nameRU} duration={movie.duration} key={movie.id} />
+      ))}
+    </div>
       ) : (
         <Preloader />
       )}  
-            </div>
+        
         </section>
     );
       }

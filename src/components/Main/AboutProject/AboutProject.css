@@ -81,10 +81,10 @@
     line-height: 17px;
   }
   
-  .timeline__component_backend{
+  .timeline__component_type_backend{
     background-color: #2BE080;
   }
-  .timeline__component_frontend{
+  .timeline__component_type_frontend{
     background-color: 
     #F2F2F2;
   }
@@ -103,9 +103,7 @@
    .section {
     max-width: calc(100% - 100px);
    }
-  
     .project {
-      
       padding-top: 90px;
       padding-bottom: 90px;
     }
@@ -147,10 +145,8 @@
       max-width: 284px;
     }
   
-  
     .desctiption__title {
       font-size: 18px;
-  
     }
   
     .desctiption__subtitle  {
@@ -160,7 +156,6 @@
     .timeline{
       grid-template-columns: 100px auto;
     }
-  
     
     .timeline__component {
       font-size: 11px;

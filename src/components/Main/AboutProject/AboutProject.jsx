@@ -17,8 +17,8 @@ function AboutProject(props) {
                     </div>
                 </article>
                 <div className="timeline">
-                    <div className='timeline__component timeline__component_backend'>1 неделя</div>
-                    <div className='timeline__component timeline__component_frontend'>4 недели</div>
+                    <div className='timeline__component timeline__component_type_backend'>1 неделя</div>
+                    <div className='timeline__component timeline__component_type_frontend'>4 недели</div>
                     <p className="timeline__subtitle">Back-end</p>
                     <p className="timeline__subtitle">Front-end</p>
                 </div>

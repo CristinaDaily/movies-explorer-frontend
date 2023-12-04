@@ -1,8 +1,5 @@
 import React from 'react';
-import './Main.css'
-
-import photo from '../../images/photo.png';
-import arrowIcon from '../../images/arrow-icon.svg'
+import './Main.css';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Promo from './Promo/Promo';

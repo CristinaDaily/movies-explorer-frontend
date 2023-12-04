@@ -45,7 +45,6 @@
   }
 
   .element__like-btn_active{
-    
     background-image: url('../../images/like-btn_active.svg');
    
   }
@@ -71,8 +70,6 @@
 
   .element__deleteCard-btn_active {
     visibility: visible;
-
-
   }
   
   .element__line{

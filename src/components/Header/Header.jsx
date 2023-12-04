@@ -26,7 +26,6 @@ function Header() {
     };
 
   function handleOpenMenuClick(){
-    console.log('click')
       setMenuActive(!isMenuActive);
      };
 
