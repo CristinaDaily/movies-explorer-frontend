@@ -1,10 +1,10 @@
 import React from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import './movies.css';
+import './Movies.css';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import movies from '../../movies';
+import movies from '../../movies.js';
 
 function Movies() {
     return (

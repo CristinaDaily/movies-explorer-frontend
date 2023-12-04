@@ -8,7 +8,7 @@
   background-color: white;
   display: flex;
   transition: visibility 0.5s, opacity 0.5s ease-in-out;
-  justify-content: start;
+  justify-content: flex-start;
   display: none;
 }
 
