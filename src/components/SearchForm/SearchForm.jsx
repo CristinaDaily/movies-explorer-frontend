@@ -1,5 +1,5 @@
 import React from 'react';
-import './SearchForm.css';
+import './searchForm.css';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox'
 
 function SearchForm(props) {
