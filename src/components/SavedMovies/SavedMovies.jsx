@@ -9,8 +9,10 @@ function SavedMovies() {
     return (
         <>
         <Header />
+        <main>
         <SearchForm placeholder="Фильм"/>
         <MoviesCardList  movieData={savedMovies}/>
+        </main>
         <Footer />
         </>
     );

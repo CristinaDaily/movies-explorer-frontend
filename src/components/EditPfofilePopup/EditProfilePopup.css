@@ -25,7 +25,7 @@
 
   }
 
-  .input-container {
+  .popup__container {
     display: grid;
     grid-template-columns: 50px 1fr;
   }
@@ -43,10 +43,6 @@
   text-align: right;
   
   }
-
-  
-
- 
 
   
   .profile__dividing-line{
@@ -67,10 +63,9 @@
     line-height: 13px;
     margin-top: 187px;
 
-
   }
 
-  .save__button {
+  .popup__button {
     margin-top: 20px;
     height: 45px;
     width: 100%;
@@ -87,41 +82,7 @@
 
   }
 
-  .save__button_disabled {
-    background-color:  #F8F8F8;
-    color: rgba(194, 194, 194, 1)
-  }
-
-  .profile__error {
-    width: 100%;
-    color: rgba(255, 0, 76, 1);
-    font-family: inherit;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 13px;
-    margin-top: 187px;
-
-
-  }
-
-  .save__button {
-    margin-top: 20px;
-    height: 45px;
-    width: 100%;
-    color: rgba(255, 255, 255, 1);
-    font-family: inherit;
-    font-size: 14px;
-    line-height: 16px;
-    font-weight: 500;
-    background-color:  rgba(52, 86, 243, 1);
-    border-radius: 3px;
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-
-  }
-
-  .save__button_disabled {
+  .popup__button_disabled {
     background-color:  #F8F8F8;
     color: rgba(194, 194, 194, 1)
   }

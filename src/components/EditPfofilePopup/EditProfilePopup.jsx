@@ -8,7 +8,7 @@ function EditProfilePopup(props) {
         <div className='profile'>
             <h2 className="profile__title">Добро пожаловать!</h2>
             <form className='profile__form' >
-        <div className='input-container'>       
+        <div className='popup__container'>       
         <label htmlFor='name-profile' className='profile__label'>
           Имя
         </label>        
@@ -22,7 +22,7 @@ function EditProfilePopup(props) {
         ></input>   
         </div>   
         <div className='profile__dividing-line'></div>
-        <div className='input-container'>  
+        <div className='popup__container'>  
         <label htmlFor='email-profile' className='profile__label'>
           Email
         </label>  
@@ -36,7 +36,7 @@ function EditProfilePopup(props) {
         />
         </div> 
         <span className='profile__error'></span>
-        <button type='submit' className='save__button'>
+        <button type='submit' className='popup__button'>
         Сохранить
         </button>
             </form>

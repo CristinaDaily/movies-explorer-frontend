@@ -6,7 +6,7 @@ function Menu({isOpen, onClose, isActiveLink}) {
     console.log(isOpen)
 
     return (
-        <div className={`menu ${isOpen && 'menu_active'} `}>
+        <aside className={`menu ${isOpen && 'menu_active'} `}>
             <div className="menu__content">    
           <button
            type='button'
@@ -39,7 +39,7 @@ function Menu({isOpen, onClose, isActiveLink}) {
     </button>
     </Link> 
     </div>
-    </div>
+    </aside>
 
     );
 }

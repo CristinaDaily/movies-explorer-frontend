@@ -6,7 +6,7 @@ import './Login.css';
 
 function Login() {
     return (
-      <div className='login'>
+      <main className='login'>
         <Link to="/" className="register__logo logo">
           <img src={logo} alt="Лого" />
           </Link>
@@ -46,7 +46,7 @@ function Login() {
   Регистрация
   </Link>
 </div>
-  </div>
+  </main>
     );
 }
 

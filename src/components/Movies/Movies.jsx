@@ -13,7 +13,7 @@ function Movies() {
         <main className='content' >
             <SearchForm placeholder="Фильм" />
             <MoviesCardList movieData ={movies}/>
-            <button className='content__add-btn botton'>Ещё</button>
+            <button className='content__add-btn button'>Ещё</button>
         </main>
         < Footer />
         </>
