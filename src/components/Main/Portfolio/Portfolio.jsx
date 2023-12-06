@@ -20,24 +20,22 @@ function Portfolio() {
             <h3 className='portfolio__title'>Портфолио</h3>
             <ul className="portfolio__list list">
                 <li className='portfolio__item'>
-                <a href="https://github.com/CristinaDaily/how-to-learn" className="portfolio__link link" target="_blank" rel="noreferrer" >Статичный сайт</a>
-                <i >
+                <a href="https://github.com/CristinaDaily/how-to-learn" className="portfolio__link link" target="_blank" rel="noreferrer" >
+                    <span>Статичный сайт</span>
                 <img src={arrowIcon} alt="иконка для перехода"  className='portfolio__icon'/>
-                </i>
+                </a>
                 </li >
-                <div className="portfolio__line"></div>
                 <li className='portfolio__item'>
-                <a href="https://github.com/CristinaDaily/russian-travel" className="portfolio__link  link" target="_blank" rel="noreferrer" >Адаптивный сайт</a>
-                <i >
+                <a href="https://github.com/CristinaDaily/russian-travel" className="portfolio__link  link" target="_blank" rel="noreferrer" >
+                <sapn>Адаптивный сайт</sapn>
                 <img src={arrowIcon} alt="иконка для перехода"  className='portfolio__icon'/>
-                </i>
+                </a>
                 </li>
-                <div className="portfolio__line"></div>
                 <li className='portfolio__item'>
-                <a href="https://github.com/CristinaDaily/react-mesto-api-full-gha" className="portfolio__link  link" target="_blank" rel="noreferrer" >Oдностраничное приложение</a>
-                <i >
+                <a href="https://github.com/CristinaDaily/react-mesto-api-full-gha" className="portfolio__link  link" target="_blank" rel="noreferrer" >
+                <span>Oдностраничное приложение</span>
                 <img src={arrowIcon} alt="иконка для перехода"  className='portfolio__icon'/>
-                </i>
+                </a>
                 </li>
 
              </ul>   

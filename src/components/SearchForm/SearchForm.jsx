@@ -7,8 +7,8 @@ function SearchForm(props) {
         <section className='search'>
             <form className='search__form'>
             <div className='search__container'>   
-            <input type="text" name='search__input' className='search__input' placeholder={props.placeholder} />
-            <button type='button' aria-label='кнопка поиска' className='search__button button'>Найти</button> 
+            <input type="text" name='search__input' className='search__input' placeholder={props.placeholder} required />
+            <button type='submit' aria-label='кнопка поиска' className='search__button button'>Найти</button> 
             </div> 
             < FilterCheckbox />
             </form>

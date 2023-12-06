@@ -5,6 +5,7 @@ import accountIcon from '../../images/account-icon.svg';
 
 function Navigation({isLandingPage, isActiveLink}) {
     return (
+        <>
         <nav className='navigation'>
         <ul className='navigation__wrapper list '>
             <li >
@@ -18,6 +19,7 @@ function Navigation({isLandingPage, isActiveLink}) {
             ${isActiveLink('/saved-movies') && 'navigation__link_active' }`}>Сохраненные фильмы</Link>
             </li>
         </ul>
+        </nav>
         <Link to='/profile'className='link'>
         <button className= {`button navigation__profile-btn ${isLandingPage ? 'navigation__profile-btn_type_landing' : 'navigation__profile-btn_type_movieapp' }`}>
             <div className={`round ${isLandingPage ? 'round_type_landing':'round_type_movieapp' }`}>
@@ -26,7 +28,7 @@ function Navigation({isLandingPage, isActiveLink}) {
       Аккаунт
     </button>
     </Link>
-    </nav>
+    </>
     );
 }
 

@@ -5,8 +5,11 @@ import logo from '../../images/logo.svg'
 
 function Register() {
     return (
-        <div className='register'>
-            <img src={logo} alt="Лого" className="register__logo logo" />
+        <main className='register'>
+          <Link to="/" className="register__logo logo">
+          <img src={logo} alt="Лого" />
+          </Link>
+            
             <h2 className="register__title">Добро пожаловать!</h2>
         <form className='register__form' >
         <label htmlFor='name-register' className='register__label'>
@@ -55,7 +58,7 @@ function Register() {
           Войти
         </Link>
       </div>
-        </div>
+        </main>
     );
 }
 

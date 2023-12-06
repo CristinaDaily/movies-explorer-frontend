@@ -7,7 +7,8 @@ function Profile() {
     return (
       <>
       <Header />
-        <div className='profile'>
+      <main>
+        <section className='profile'>
             <h2 className="profile__title">Привет, Виталий!</h2>
             <div className='profile__container' >
         <div className='profile__wrapper'>  
@@ -26,7 +27,8 @@ function Profile() {
         <button className="profile__exit ">Выйти из аккаунта</button>
         
             
-        </div>
+        </section>
+        </main>
         <EditProfilePopup />
         </>
     );

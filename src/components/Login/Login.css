@@ -9,7 +9,7 @@
 }
 
 .login__button {
-    margin-top: 200px;
+    margin-top: 203px;
     height: 45px;
     width: 100%;
     color: rgba(255, 255, 255, 1);
@@ -22,4 +22,24 @@
     border: 0;
     padding: 0;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 900px) {
+    .login{
+      margin-top: 232px; 
+      
+      
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .login {
+      margin-top: 56px; 
+      width: 260px;
+    }
+    .login__button {
+        margin-top: 291px;
+
+    }
+    
   }

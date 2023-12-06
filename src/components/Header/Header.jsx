@@ -56,9 +56,12 @@ function Header() {
 
   return (
     <>
-    <div className={`header ${isLandingPage && 'header_type_landing'}`}>
+    <header className={`header ${isLandingPage && 'header_type_landing'}`}>
         <div className='header__container'>
-      <img src={logo} alt="Лого" className="header__logo logo" />
+        <Link to="/" className="header__logo logo">
+        <img src={logo} alt="Лого" />
+        </Link>
+      
       {loggedIn ? (
       windowSize.width > 900 ? (
         < Navigation isLandingPage ={isLandingPage} isActiveLink={isActiveLink}/>
@@ -80,7 +83,7 @@ function Header() {
         
       )}
     </div>
-    </div>
+    </header>
     < Menu  isOpen={isMenuActive} onClose={closeMenu} isActiveLink={isActiveLink}/>
     </>
   );

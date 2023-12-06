@@ -7,7 +7,9 @@ import './Login.css';
 function Login() {
     return (
       <div className='login'>
-      <img src={logo} alt="Лого" className="register__logo logo" />
+        <Link to="/" className="register__logo logo">
+          <img src={logo} alt="Лого" />
+          </Link>
       <h2 className="register__title">Рады видеть!</h2>
   <form className='register__form' > 
   <label htmlFor='email-register' className='register__label'>

@@ -82,18 +82,10 @@
   }
   
   .portfolio__item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .portfolio__line {
-    content: '';
-    border-bottom: #E8E8E8 1px solid;
-    width: 100%;
-    margin-top: 19px;
-    margin-bottom: 20px;
+    border-bottom:  #E8E8E8 1px solid;
+    padding-bottom: 19px; 
+    margin-bottom: 20px; 
+    
   }
   
   .portfolio__link {
@@ -102,6 +94,10 @@
     font-size: 30px;
     font-weight: 400;
     line-height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     
   }
   
