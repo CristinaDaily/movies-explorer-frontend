@@ -1,0 +1,102 @@
+.technologies {
+    background-color: #F5F5F5 ;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+   }
+  
+   .technologies__title {
+    font-family: 'Inter' sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -4%;
+    margin: 90px auto 26px;
+    text-align: center;
+   }
+  
+   .technologies__subtitle {
+    font-family: 'Inter' sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -4%;
+    margin:0 auto 100px;
+    text-align: center;
+    max-width: 460px;
+   }
+  
+   .list {
+    list-style: none;
+    
+   }
+  
+   .technologies__list {
+    display: grid;
+    grid-template-columns: repeat(7, 90px);
+    gap:10px;
+    padding: 0;
+    justify-content: center;
+    margin: 0;
+  
+   }
+  
+   .technologies__item{
+    height: 60px;
+    width: 90px;
+    background-color:#E8E8E8 ;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    font-family: 'Inter' sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: -4%;
+    border-radius: 10px;
+   }
+  
+  
+   @media screen and (max-width: 900px) {
+    .technologies {
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+    .technologies__title {
+      margin: 80px auto 22px;
+    }
+    .technologies__subtitle {
+      margin-bottom: 83px;
+    }
+    .technologies__list {
+      grid-template-columns: repeat(7, 84px);
+    }
+    .technologies__item {
+      width:84px;
+      height: 57px;
+    }
+   }
+  
+  @media screen and (max-width: 767px) {
+    .technologies {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+    .technologies__list {
+      grid-template-columns: repeat(2, 84px);
+    }
+    .technologies__title {
+      margin: 60px auto 24px;
+      font-size: 30px;
+      line-height: 36px;
+    }
+  
+    .technologies__subtitle {
+      font-size: 11px;
+      line-height: 16px;
+    }
+    .technologies__subtitle {
+      margin-bottom: 50px;
+    }
+   }

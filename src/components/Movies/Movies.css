@@ -1,0 +1,29 @@
+.content {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+.content__add-btn {
+    margin: 50px auto 80px;
+    display: block;
+    height: 36px;
+    width: 320px;
+    color: #000000;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 6px;
+    background-color: #F9F9F9;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+}
+  
+  @media screen and (max-width: 767px) {
+    .content__add-btn {
+     width: 240px;
+    }
+  }

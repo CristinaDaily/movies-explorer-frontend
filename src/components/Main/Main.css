@@ -1,0 +1,12 @@
+
+.landing {
+    margin: 0 auto;
+    
+}
+
+.section {
+  max-width: calc(100% - 140px);
+  width: 100%;
+  margin: 0 auto;
+
+}

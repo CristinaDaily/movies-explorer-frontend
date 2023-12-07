@@ -1,0 +1,89 @@
+.menu {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top:0;
+    right: 0;
+    background-color: rgba(0,0,0,0.3);
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in-out;
+    z-index: 9999;
+
+}
+
+.menu_active {
+    transform: translateX(0)
+
+}
+
+.menu__content {
+    position: fixed;
+    width: 520px;
+    top:0;
+    right: 0;
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__close {
+    position: absolute;
+    top: 22.44px;
+    right: 22.44px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    background-image: url(../../images/munu-close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px 32px;
+    appearance: none;
+    background-color: initial;
+    border: 0;
+  }
+
+  .menu__container {
+    margin: 159px auto auto;
+    display: flex;
+    flex-direction: column;
+    gap:22px;
+    align-items: center;
+    padding: 0;
+    grid-area:container;
+  }
+
+  .menu__item {
+    color: #000000;
+    font-family: "inter" sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    border-bottom: 2px solid white;
+    padding-bottom: 4px;
+  }
+
+  .menu__item_active {
+    border-bottom: 2px solid black;
+  }
+
+  .menu__account-btn{
+    margin-bottom: 90px;
+    
+  }
+
+  @media screen and (max-width: 600px) {
+    .menu__content {
+       width:100%;
+    }
+
+    .menu__container {
+        margin-top: 144px;
+    }
+
+    .menu__account-btn{
+      margin-bottom: 40px;
+    }
+    
+   }
