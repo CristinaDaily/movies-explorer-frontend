@@ -1,11 +1,11 @@
 import React,  { useState} from 'react';
 import { useLocation} from 'react-router-dom';
-import movie1 from '../../images/movie1.png';
+
 import './MoviesCard.css';
 
 
 
-function MoviesCard({name, duration}) {
+function MoviesCard({image, nameRU, duration}) {
   const [isHovered, setIsHovered] = useState(false);
 
   const location = useLocation();
@@ -31,11 +31,11 @@ function MoviesCard({name, duration}) {
         onMouseLeave={handleMouseLeave}>
           <img
             className='element__image'
-            src={movie1}
-            alt='Обложка фильма'
+            src= {image}
+            alt={`Обложка фильма ${nameRU}`}
           />
         <div className='element__wrapper'>
-          <h2 className='element__movie-name'>{name}</h2>
+          <h2 className='element__movie-name'>{nameRU}</h2>
           {moviePage && <button
               type='button'
               className='element__like-btn element__like-btn_active'

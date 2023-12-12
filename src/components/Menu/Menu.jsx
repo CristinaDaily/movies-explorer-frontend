@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import './Menu.css';
 import accountIcon from '../../images/account-icon.svg'
 function Menu({isOpen, onClose, isActiveLink}) {
-    console.log(isOpen)
 
     return (
         <aside className={`menu ${isOpen && 'menu_active'} `}>
