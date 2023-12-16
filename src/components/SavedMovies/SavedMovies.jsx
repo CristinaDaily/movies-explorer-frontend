@@ -5,10 +5,10 @@ import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import savedMovies from '../../savedMovies';
 
-function SavedMovies() {
+function SavedMovies({loggedIn}) {
     return (
         <>
-        <Header />
+        <Header loggedIn={loggedIn} />
         <main>
         <SearchForm placeholder="Фильм"/>
         <MoviesCardList  movieData={savedMovies}/>

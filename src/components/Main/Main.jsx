@@ -7,10 +7,10 @@ import AboutProject from './AboutProject/AboutProject';
 import Techs from './Techs/Techs';
 import Portfolio from './Portfolio/Portfolio';
 
-function Main() {
+function Main({loggedIn}) {
     return (
         <div className='page'>
-        <Header />
+        <Header loggedIn={loggedIn}/>
         <main className="landing">
             < Promo />
             < AboutProject />

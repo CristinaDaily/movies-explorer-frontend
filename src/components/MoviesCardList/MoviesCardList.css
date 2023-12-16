@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+.movies__noresult{
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+
 .movies__container {
   max-width: 1140px;
   margin: 0 auto ;

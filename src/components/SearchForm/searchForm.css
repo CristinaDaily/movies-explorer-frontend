@@ -50,6 +50,10 @@
   bottom: 13px;
 }
 
+.search__error{
+  margin: 0;
+}
+
 
 @media screen and (max-width: 1170px) {
   .search {

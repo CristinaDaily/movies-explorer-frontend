@@ -10,14 +10,14 @@ import Navigation from '../Navigation/Navigation';
 
 
 
-function Header() {
+function Header({loggedIn}) {
   const [isMenuActive, setMenuActive]= useState(false);
     const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
     });
-  const [loggedIn, setLoggedIn] = useState(true);
-    
+  
+    //const [loggedIn, setLoggedIn] = useState(false);
   const handleResize = () => {
     setWindowSize({
       width: window.innerWidth,

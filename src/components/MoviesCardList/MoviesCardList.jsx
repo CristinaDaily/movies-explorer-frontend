@@ -4,19 +4,19 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import './MoviesCardList.css';
 import Preloader from '../Preloader/Preloader';
 
-function MoviesCardList({movieData, isLoading}) {
+function MoviesCardList({movieData, isLoading, isNoResults, error, visibleCards}) {
       
       const location = useLocation();
       const savedMoviePage = location.pathname === '/saved-movies';
 
     return (
-        <section className='movies'>
-            {!isLoading ? (
-    <div className={`movies__container ${savedMoviePage && 'movies__container_type_saved'}`}> 
-    {movieData.map((proprsData) => <MoviesCard {...proprsData} key={proprsData.id}/>)}
-    
-      
-    </div>
+        <section className='movies'> 
+        { error && <p className='movies__noresult'>{error}</p>} 
+        {!isLoading && isNoResults && <p className='movies__noresult'>Ничего не найдено</p>} 
+        {!isLoading ? (
+        <div className={`movies__container ${savedMoviePage && 'movies__container_type_saved'}`}> 
+        {movieData.slice(0, visibleCards).map((propsData) => <MoviesCard {...propsData} key={propsData.id}/>)}  
+        </div>
       ) : (
         <Preloader />
       )}  
