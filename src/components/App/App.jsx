@@ -60,7 +60,21 @@ function App() {
     .login(email, password)
     .then((user)=>{
       if (user) {
-        token.setToken(user._id)
+        token.setToken(user._id);
+        console.log(user);
+        // todo: 
+        //   `user` object here (coming from `/signin` endpoint)
+        //   contains only `email` and `_id` properties.
+        //
+        //   But it's missing `name`.
+        //   That's why in the profile, the name is empty after login.
+        //
+        //   Although, when a user refreshes the page
+        //   `user` object comes from `/me` endpoint
+        //   which does contain `name` property.
+        //
+        //   To fix it, `/signin` endpoint's response
+        //   should be extended with `name property`.
         setCurrentUser(user)
         setLoggedIn(true)
         navigate('/movies', { replace: true })
