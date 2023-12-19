@@ -1,13 +1,22 @@
 import { BASE_URL } from "./constants";
 
-const getResponseData = (res) => {
-    if (!res.ok) {
-      return Promise.reject(`Error: ${res.status}`);
-    }
-    return res.json();
-  };
-  
+export function isApiError(error){
+  if (error === undefined || error === null) return false;
+  return (
+    typeof error.status === 'number' &&
+    typeof error.payload === 'object'
+  );
+}
 
+const getResponseData = async (response) => {
+    if (!response.ok) {
+      return Promise.reject({
+        status: response.status,
+        payload: await response.json(),
+      });
+    }
+    return await response.json();
+};
 
 export const register =(name, email, password) => {
     return fetch(`${BASE_URL}/signup`, {

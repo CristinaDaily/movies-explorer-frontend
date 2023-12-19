@@ -67,23 +67,20 @@ function App() {
       }
     })
     .catch((err)=>{
-       console.log(err)
       setLoggedIn(false);
-    })
+      throw err;
+    });
   }
   
   function handleRegister({name, email, password}){
     return api
     .register(name, email, password)
     .then((user)=>{
-      if(!user || user.statusCode === 400 )throw new Error("Переданы некорректные данные")
-      if (user.statusCode === 409 ) throw new Error("Пользователь с таким E-mail уже существует");
-      if (user.statusCode === 500) throw new Error ("Ошибка сервера");
-      setCurrentUser(user); 
+      setCurrentUser(user);
       //autorisation and redirect to movies
-      handleLogin({email, password})
-    }
-    )}
+      handleLogin({ email, password });
+    })
+  }
 
     function handleSignout (){
       api.signout()

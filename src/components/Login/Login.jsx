@@ -1,5 +1,6 @@
 import React , { useState, useEffect }from 'react';
 import { Link } from 'react-router-dom';
+import { isApiError } from '../../utils/MainApi';
 import { useFormWithValidation } from '../../utils/formValidation';
 import logo from '../../images/logo.svg'
 import './Login.css';
@@ -8,7 +9,7 @@ import './Login.css';
 
 function Login({onLogin}) {
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
-  const {loginError, setLoginError} = useState('');
+  const [loginError, setLoginError] = useState('');
   
   const {email, password} = values;
 
@@ -18,21 +19,19 @@ function Login({onLogin}) {
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    onLogin({email, password}).catch((err) => {
-      console.log(err)
-      console.log(err.statuseco)
-        console.log(`Login error: ${err}`);
-        if (err.response && err.response.status === 401) {
-          setLoginError('Неправильное имя пользователя или пароль')
-        } else{
-          setLoginError(err.message)
+    onLogin({email, password}).catch((apiError) => {
+      let errorMessage = "Неизвестная ошибка";
+      if (isApiError(apiError)) {
+        switch (apiError.status) {
+          case 401: errorMessage = 'Неправильное имя пользователя или пароль'; break;
+          default:  errorMessage = apiError.payload.setRegistretionMessage;
         }
-        
-    })
+      } else {
+        console.error(apiError);
+      }
+      setLoginError(errorMessage);
+    });
   }
-
-
 
     return (
       <main className='login'>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
+import { isApiError } from '../../utils/MainApi';
 import './Register.css';
 import logo from '../../images/logo.svg';
 import { useFormWithValidation } from '../../utils/formValidation';
@@ -16,16 +17,23 @@ function Register({onRegister}) {
 
   
   function handleSubmit(e) {
-    setRegistretionMessage('')
     e.preventDefault();
-
-    onRegister({name, email, password}).catch((err) => {
-      setRegistretionMessage(err.message)
-      console.log(`Registration error:${err} `);
-   })
+    setRegistretionMessage('');
+    onRegister({name, email, password}).catch((apiError) => {
+      let errorMessage = "Неизвестная ошибка";
+      if (isApiError(apiError)) {
+        switch (apiError.status) {
+          case 400: errorMessage = "Переданы некорректные данные"; break;
+          case 409: errorMessage = "Пользователь с таким E-mail уже существует"; break;
+          case 500: errorMessage = "Ошибка сервера"; break;
+          default:  errorMessage = apiError.payload.setRegistretionMessage;
+        }
+      } else {
+        console.error(apiError);
+      }
+      setRegistretionMessage(errorMessage);
+   });
   }
-
-
 
     return (
         <main className='register'>
