@@ -10,24 +10,27 @@ import Navigation from '../Navigation/Navigation';
 
 
 
-function Header({loggedIn}) {
-  const [isMenuActive, setMenuActive]= useState(false);
-    const [windowSize, setWindowSize] = useState({
+function Header({ loggedIn }) {
+
+  const [ isMenuActive, setMenuActive ] = useState(false);
+  const [ windowSize, setWindowSize ] = useState ({
     width: window.innerWidth,
     height: window.innerHeight,
-    });
+  });
+
+  const location = useLocation();
+  const isLandingPage = isActiveLink('/');
   
-    //const [loggedIn, setLoggedIn] = useState(false);
   const handleResize = () => {
     setWindowSize({
       width: window.innerWidth,
       height: window.innerHeight,
       });
-    };
+  }
 
   function handleOpenMenuClick(){
-      setMenuActive(!isMenuActive);
-     };
+    setMenuActive(!isMenuActive);
+  }
 
   function closeMenu() { 
     setMenuActive(false);
@@ -37,52 +40,45 @@ function Header({loggedIn}) {
     setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
-    });
+  });
     
-    window.addEventListener('resize', handleResize);
+  window.addEventListener('resize', handleResize);
     
-    return () => {
+  return () => {
     window.removeEventListener('resize', handleResize);
     };
-    }, []);
+  }, []);
 
-  const location = useLocation();
-  function isActiveLink (path) {
-    return location.pathname === path } 
-
-  const isLandingPage = isActiveLink('/');
- 
   
+  function isActiveLink (path) {
+    return location.pathname === path; 
+  } 
+
 
   return (
     <>
     <header className={`header ${isLandingPage && 'header_type_landing'}`}>
-        <div className='header__container'>
-        <Link to="/" className="header__logo logo">
+      <div className='header__container'>
+      <Link to="/" className="header__logo logo">
         <img src={logo} alt="Лого" />
-        </Link>
-      
+      </Link>
       {loggedIn ? (
-      windowSize.width > 900 ? (
-        < Navigation isLandingPage ={isLandingPage} isActiveLink={isActiveLink}/>
-      ) : (
-        <nav>
-        <img src={isLandingPage ? menuLanding : menu } alt="иконка меню с навигацией" className="header__menu button" onClick={handleOpenMenuClick}/>
-        </nav>
-      )
+        windowSize.width > 900 ? (
+          < Navigation isLandingPage ={isLandingPage} isActiveLink={isActiveLink} />
+        ) : (
+          <nav>
+            <img src={isLandingPage ? menuLanding : menu } alt="иконка меню с навигацией" className="header__menu button" onClick={handleOpenMenuClick}/>
+          </nav>
+        )
       ) : (
         <nav className='header__navigation'>
-            <Link to='/signup' className="header__registration link">Регистрация</Link>
-    
-            <button className='header__loggin'>
-            <Link to='/signin' className="link header__loggin_type_btn">Войти</Link>
-            </button>
-
-        </nav>
-
-        
+          <Link to='/signup' className="header__registration link">Регистрация</Link>
+          <button className='header__loggin'>
+          <Link to='/signin' className="link header__loggin_type_btn">Войти</Link>
+          </button>
+        </nav> 
       )}
-    </div>
+      </div>
     </header>
     < Menu  isOpen={isMenuActive} onClose={closeMenu} isActiveLink={isActiveLink}/>
     </>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Techs.css';
 
-function Techs(props) {
+function Techs() {
     return (
         <section className="technologies">
             <div className='section'>   

@@ -1,17 +1,12 @@
 import React,  { useState} from 'react';
 import { useLocation} from 'react-router-dom';
-import { saveMovie } from '../../utils/MainApi';
-
 import './MoviesCard.css';
 
-
-
-function MoviesCard(movie) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isLiked, setIsLiked] = useState(false);
-
+function MoviesCard({ movie, onLike, onDelete }) {
+  
+  const [ isHovered, setIsHovered ] = useState(false);
+  const [ isLiked, setIsLiked ] = useState(movie.liked);
   const location = useLocation();
-
   const moviePage = location.pathname === '/movies';
   const savedMoviesPage =location.pathname ==='/saved-movies';
 
@@ -27,16 +22,17 @@ function MoviesCard(movie) {
   };
 
   const handleLikeClick = () => {
-    setIsLiked(!isLiked);
-    console.log('id',movie.id, movie)
     if(isLiked){
-     console.log('delete movie')
+      onDelete(movie)
+      setIsLiked(false)
     } else {
-      saveMovie (movie);
-      console.log('savemovie')
+      onLike(movie)
+      setIsLiked(true) 
     }
-    
+  }
 
+  const hadleDeleteClick = () =>{
+    onDelete(movie);
   }
 
   const showDudation =(duration) =>{
@@ -50,36 +46,41 @@ function MoviesCard(movie) {
     isLiked && 'element__like-btn_active'
   }`;
 
+  const handleCardClick = ()=> {
+    window.open(movie.trailer, '_blank');
+  }
 
-    return (
-        <article 
-        className='element'
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
-          <img
-            className='element__image'
-            src= {movie.image}
-            alt={`Обложка фильма ${movie.nameRU}`}
-          />
-        <div className='element__wrapper'>
-          <h2 className='element__movie-name'>{movie.nameRU}</h2>
+
+  return (
+    <article 
+      className='element'
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <img
+        className='element__image'
+        onClick={handleCardClick}
+        src= {movie.image}
+        alt={`Обложка фильма ${movie.nameRU}`}
+      />
+      <div className='element__wrapper'>
+        <h2 className='element__movie-name'>{movie.nameRU}</h2>
           {moviePage && <button
-              type='button'
-              onClick = {handleLikeClick}
-              className={movieLikeButtonClassName}
-            ></button>}
+            type='button'
+            onClick = {handleLikeClick}
+            className={movieLikeButtonClassName}
+          ></button>}
           {savedMoviesPage && (
-           <button
-              type='button'
-              className= {`element__deleteCard-btn ${isHovered &&'element__deleteCard-btn_active'}`}
-            ></button>)}  
-            
-        </div>
-        <div className='element__line'></div>
-            <p className='element__duration'>{showDudation(movie.duration)}</p>
-        
-      </article>
-    );
+          <button
+            type='button'
+            onClick={hadleDeleteClick}
+            className= {`element__deleteCard-btn ${isHovered &&'element__deleteCard-btn_active'}`}
+          ></button>)}      
+      </div>
+      <div className='element__line'></div>
+        <p className='element__duration'>{showDudation(movie.duration)}</p>
+    </article>
+  );
 }
 
 export default MoviesCard;

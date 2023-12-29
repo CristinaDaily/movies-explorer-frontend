@@ -7,9 +7,9 @@ import AboutProject from './AboutProject/AboutProject';
 import Techs from './Techs/Techs';
 import Portfolio from './Portfolio/Portfolio';
 
-function Main({loggedIn}) {
+function Main({ loggedIn }) {
     return (
-        <div className='page'>
+      <div className='page'>
         <Header loggedIn={loggedIn}/>
         <main className="landing">
             < Promo />
@@ -18,9 +18,8 @@ function Main({loggedIn}) {
             <Portfolio />       
         </main>
         <Footer />
-        </div>
+      </div>
     );
 } 
-
 
 export default Main;

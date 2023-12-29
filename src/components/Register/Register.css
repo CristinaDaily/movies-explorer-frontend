@@ -5,6 +5,7 @@
   width: 396px;
   margin:  70px auto  auto;
   height: 100%;
+  box-sizing: border-box;
   
 
 }
@@ -56,6 +57,7 @@
   line-height: 12px;
   margin-top: 6px;
   margin-bottom: 5px;
+  box-sizing: border-box;
 
 }
 
@@ -76,6 +78,7 @@
     box-sizing: border-box;
     display: block;
     width: 100%;
+    
   }
   
   .regiater__error_type_final{

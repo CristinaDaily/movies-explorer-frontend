@@ -1,11 +1,11 @@
-import React, { useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Register.css';
 import logo from '../../images/logo.svg';
 import { useFormWithValidation } from '../../utils/formValidation';
 
 
-function Register({onRegister}) {
+function Register({ onRegister }) {
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
   const {name, email, password} = values;
   const [registretionMessage, setRegistretionMessage] = React.useState('');
@@ -16,12 +16,20 @@ function Register({onRegister}) {
 
   
   function handleSubmit(e) {
-    setRegistretionMessage('')
     e.preventDefault();
+    setRegistretionMessage('')
 
     onRegister({name, email, password}).catch((err) => {
-      setRegistretionMessage(err.message)
       console.log(`Registration error:${err} `);
+      if(err === 'Error: 409' ){
+        setRegistretionMessage('Пользователь с таким email уже существует')
+      }
+      if (err === 'Error: 400' ){
+        setRegistretionMessage('Переданы некорректные данные')
+      } 
+      if (err === 'Error: 500' ){
+        setRegistretionMessage('Ошибка сервера')
+      }
    })
   }
 
