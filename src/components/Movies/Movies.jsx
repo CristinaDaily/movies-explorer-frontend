@@ -116,6 +116,7 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
   // eslint-disable-next-line 
   [screenWidth, getMovieData])
 
+
   const handleCardToShowUpdate = () => {
     const currentlyVisibleCards = movieData.slice(0, visibleCards);
       setCardToShow(currentlyVisibleCards);
@@ -189,14 +190,12 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
     return savedMovies.find(savedMovie => savedMovie.movieId === movie.movieId)
   }
 
-
-  const cardToShowLikeStatus = cardToShow.map(movie => 
+  
+  const cardToShowLikeStatus = (cardToShow.map(movie => 
   ({...movie, 
    liked: checkIfMovieIsSaved(movie, savedMovies)!== undefined
-  }))
+  })))
 
-
-  
 
   return (
     <>

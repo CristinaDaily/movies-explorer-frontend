@@ -22,7 +22,7 @@ function App() {
   
   const [ currentUser, setCurrentUser ] = React.useState({});
   const [ loggedIn, setLoggedIn ] = useLocalStorageState('loggedIn', false ); 
-  const [ savedMovies, setSavedMovies ] = useState([]); // сохраненный фильмы
+  const [ savedMovies, setSavedMovies ] =  useLocalStorageState('savedMovies',[]); // сохраненный фильмы
   const [ showInputError, setShowInputError ] = useState(false); // ошибка пустого поля поиска
   const [ searchPerformed, setSearchPerformed ] = useState(false);
   const [ error, setError ]= useState(null); // ошибка в процессе получения и обработки данных 
