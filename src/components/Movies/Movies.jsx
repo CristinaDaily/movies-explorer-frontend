@@ -23,7 +23,7 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
   const [cardsPerLoad, setCardsPerLoad]= useState(4);
   const [isNoResults, setIsNoResults] = useState(false); // ошибка, если ничего не найдено
   const [cardToShow, setCardToShow] = useLocalStorageState('cardToShow',[]);
-  const [cardToShowLikeStatus, setCardToShowLikeStatus] = useLocalStorageState('cardToShowlikeStatus',[]);
+
 
   // отслеживает изменения размера окна
     useEffect(() => {
@@ -189,15 +189,12 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
     return savedMovies.find(savedMovie => savedMovie.movieId === movie.movieId)
   }
 
-  setCardToShowLikeStatus(cardToShow.map(movie => 
-    ({...movie, 
-      liked: checkIfMovieIsSaved(movie, savedMovies)!== undefined
-  })))
-  
-  //const cardToShowLikeStatus = cardToShow.map(movie => 
-  //  ({...movie, 
-  //    liked: checkIfMovieIsSaved(movie, savedMovies)!== undefined
-  //}))
+
+  const cardToShowLikeStatus = cardToShow.map(movie => 
+  ({...movie, 
+   liked: checkIfMovieIsSaved(movie, savedMovies)!== undefined
+  }))
+
 
   
 
