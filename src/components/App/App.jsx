@@ -47,6 +47,8 @@ function App() {
       .catch((err) => {
         console.error('Error during token validation:', err);
         token.removeToken();   
+        navigate('/', { replace: true })
+        localStorage.clear()
       });
   }
 
@@ -94,11 +96,13 @@ function App() {
     const id = token.getToken();
       if (id) {
         auth(id)
-      } else {
-        navigate('/', { replace: true })
-        localStorage.clear()
       }
+      //else {
+      //  navigate('/', { replace: true })
+      //  localStorage.clear()
+      //}
   },[])
+ 
 
  
   useEffect(()=>{

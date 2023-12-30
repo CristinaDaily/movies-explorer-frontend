@@ -62,7 +62,8 @@ function SavedMovies({ loggedIn, savedMovies, onDelete, isLoading, setIsLoading 
   useEffect(()=>{
     const filteredShortMovies =  filterShortMovies(filteredSavedMovies, isCheckedSaved)
     setSavedMovieData(filteredShortMovies)
-  },[ isCheckedSaved ]) 
+  },// eslint-disable-next-line 
+  [ isCheckedSaved ]) 
 
 
   useEffect(() => {

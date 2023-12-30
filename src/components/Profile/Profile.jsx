@@ -14,12 +14,14 @@ function Profile({ onSignout, loggedIn, onEditProfile, isPopupOpen, onClosePopup
 
   React.useEffect(() => {
     resetForm(currentUser);
-  },[]);
+  }, // eslint-disable-next-line 
+  []);
 
 
   React.useEffect(() => {
     checkInputs();
-  },[values]);
+  },// eslint-disable-next-line 
+  [values]);
 
   function checkInputs() {
     const { name, email } = currentUser;

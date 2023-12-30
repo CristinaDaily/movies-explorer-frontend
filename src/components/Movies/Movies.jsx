@@ -111,7 +111,9 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
     }
       setCardsPerLoad(additionalCards); 
 
-  },[screenWidth, getMovieData])
+  },
+  // eslint-disable-next-line 
+  [screenWidth, getMovieData])
 
   const handleCardToShowUpdate = () => {
     const currentlyVisibleCards = movieData.slice(0, visibleCards);
@@ -120,7 +122,9 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
     
   useEffect(() => {
     handleCardToShowUpdate();
-  }, [visibleCards, movieData]);
+  }, 
+  // eslint-disable-next-line 
+  [visibleCards, movieData]);
         
 
   const mapMovies = (movies) => {
@@ -176,7 +180,9 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
         setIsNoResults(false);
       }
         setMovieData(filterResult);
-  },[isChecked, searchPerformed])
+  },
+  // eslint-disable-next-line 
+  [isChecked, searchPerformed])
 
   const checkIfMovieIsSaved = (movie, savedMovies) => {
     return savedMovies.find(savedMovie => savedMovie.movieId === movie.movieId)
