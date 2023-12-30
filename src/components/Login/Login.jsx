@@ -4,9 +4,8 @@ import { useFormWithValidation } from '../../utils/formValidation';
 import logo from '../../images/logo.svg'
 import './Login.css';
 
-
-
 function Login({ onLogin }) {
+  
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
   const [ loginError, setLoginError ] = useState('');
   const { email, password } = values;

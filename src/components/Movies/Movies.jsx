@@ -23,6 +23,7 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
   const [cardsPerLoad, setCardsPerLoad]= useState(4);
   const [isNoResults, setIsNoResults] = useState(false); // ошибка, если ничего не найдено
   const [cardToShow, setCardToShow] = useLocalStorageState('cardToShow',[]);
+  const [cardToShowLikeStatus, setCardToShowLikeStatus] = useLocalStorageState('cardToShowlikeStatus',[]);
 
   // отслеживает изменения размера окна
     useEffect(() => {
@@ -51,7 +52,7 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
         const filterResult = await filterShortMovies(filteredMovies, isChecked);
     
         if (filterResult.length === 0) {
-          setIsNoResults(true); // если результаты поиска отсутствуют
+          setIsNoResults(true); 
         } else {
           setIsNoResults(false);
         }
@@ -65,7 +66,7 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
         const filteredMovies = await filtereMoviesFromSearch(mapAppMovies, searchQuery);
         const filterResult = await filterShortMovies(filteredMovies, isChecked);
         if (filterResult.length === 0) {
-          setIsNoResults(true); // если результаты поиска отсутствуют
+          setIsNoResults(true); 
         } else {
           setIsNoResults(false);
         }
@@ -175,7 +176,7 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
   useEffect(()=>{
     const filterResult = filterShortMovies(filtredMovies,isChecked);
       if (searchPerformed && filterResult.length === 0) {
-        setIsNoResults(true); // если результаты поиска отсутствуют
+        setIsNoResults(true); 
       } else {
         setIsNoResults(false);
       }
@@ -188,10 +189,17 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
     return savedMovies.find(savedMovie => savedMovie.movieId === movie.movieId)
   }
 
-  const cardToShowLikeStatus = cardToShow.map(movie => 
+  setCardToShowLikeStatus(cardToShow.map(movie => 
     ({...movie, 
       liked: checkIfMovieIsSaved(movie, savedMovies)!== undefined
-  }))
+  })))
+  
+  //const cardToShowLikeStatus = cardToShow.map(movie => 
+  //  ({...movie, 
+  //    liked: checkIfMovieIsSaved(movie, savedMovies)!== undefined
+  //}))
+
+  
 
   return (
     <>

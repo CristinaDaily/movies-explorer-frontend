@@ -21,13 +21,12 @@ import { useLocalStorageState } from '../../utils/hooks.js';
 function App() {
   
   const [ currentUser, setCurrentUser ] = React.useState({});
-  const [ loggedIn, setLoggedIn ] = useLocalStorageState('loggedIn', false );
+  const [ loggedIn, setLoggedIn ] = useLocalStorageState('loggedIn', false ); 
   const [ savedMovies, setSavedMovies ] = useState([]); // сохраненный фильмы
-
   const [ showInputError, setShowInputError ] = useState(false); // ошибка пустого поля поиска
   const [ searchPerformed, setSearchPerformed ] = useState(false);
   const [ error, setError ]= useState(null); // ошибка в процессе получения и обработки данных 
-  const [ isLoading, setIsLoading ] = useState(false); 
+  const [ isLoading, setIsLoading ] = useState(false); // preloader
   const [ isInfoPopupOpen, setisInfoPopupOpen ] = useState(false); // попап с информацией об успешном редактировании профайла
   
   const navigate = useNavigate();
@@ -35,8 +34,6 @@ function App() {
   const pathname = location.pathname
 
  // Registration and Authorization
-
- 
 
   function handleLogin ({email, password}){
     return api
@@ -90,9 +87,9 @@ function App() {
         .catch((err) => {
           console.error('Error during token validation:', err);
           token.removeToken();  
-          setLoggedIn(false); // new
-          navigate('/', { replace: true }) // new
-          
+          setLoggedIn(false); 
+          navigate('/', { replace: true }) 
+          localStorage.clear()
         });
     }
 
@@ -102,8 +99,6 @@ function App() {
         auth(id)
       }
   },[])
- 
-
  
   useEffect(()=>{
     if(loggedIn) {

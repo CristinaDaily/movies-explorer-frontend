@@ -8,6 +8,7 @@ import Techs from './Techs/Techs';
 import Portfolio from './Portfolio/Portfolio';
 
 function Main({ loggedIn }) {
+  
     return (
       <div className='page'>
         <Header loggedIn={loggedIn}/>
