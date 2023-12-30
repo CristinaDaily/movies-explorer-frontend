@@ -35,22 +35,7 @@ function App() {
 
  // Registration and Authorization
 
-  const auth = (id) => {
-    api.getCurrentUser()
-      .then((res) => {
-        if (res) {
-          setCurrentUser({ email: res.email, _id: res._id, name:res.name });
-          setLoggedIn(true);
-          navigate(pathname, {replace: true});
-        }
-      })
-      .catch((err) => {
-        console.error('Error during token validation:', err);
-        token.removeToken();   
-        navigate('/', { replace: true })
-        localStorage.clear()
-      });
-  }
+ 
 
   function handleLogin ({email, password}){
     return api
@@ -92,6 +77,24 @@ function App() {
       })
     }
 
+    const auth = (id) => {
+      api.getCurrentUser()
+        .then((res) => {
+          if (res) {
+            setCurrentUser({ email: res.email, _id: res._id, name:res.name });
+            setLoggedIn(true);
+            navigate(pathname, {replace: true});
+          }
+        })
+        .catch((err) => {
+          console.error('Error during token validation:', err);
+          token.removeToken();  
+          setLoggedIn(false); // new
+          navigate('/', { replace: true }) // new
+          
+        });
+    }
+
   useEffect(()=>{
     const id = token.getToken();
       if (id) {
@@ -109,9 +112,7 @@ function App() {
     if(loggedIn) {
         api.getCurrentUser()
           .then((user)=>{
-            console.log(user, 'получаю данные если loggedIn')
             setCurrentUser(user)
-          // нужно получать также сохраненные карточки
         }).catch((err)=>{
           console.log(err)
         })
