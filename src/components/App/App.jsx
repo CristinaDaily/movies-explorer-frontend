@@ -13,6 +13,7 @@ import NotFound from '../NotFound/NotFound';
 import Profile from '../Profile/Profile';
 import * as api from '../../utils/MainApi';
 import * as token from '../../utils/token';
+import { useLocalStorageState } from '../../utils/hooks.js';
 
 
 
@@ -20,7 +21,7 @@ import * as token from '../../utils/token';
 function App() {
   
   const [ currentUser, setCurrentUser ] = React.useState({});
-  const [ loggedIn, setLoggedIn ] = React.useState(false);
+  const [ loggedIn, setLoggedIn ] = useLocalStorageState('loggedIn', false );
   const [ savedMovies, setSavedMovies ] = useState([]); // сохраненный фильмы
 
   const [ showInputError, setShowInputError ] = useState(false); // ошибка пустого поля поиска
@@ -100,10 +101,6 @@ function App() {
       if (id) {
         auth(id)
       }
-      //else {
-      //  navigate('/', { replace: true })
-      //  localStorage.clear()
-      //}
   },[])
  
 
