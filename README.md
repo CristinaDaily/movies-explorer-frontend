@@ -2,8 +2,7 @@
 
 https://movieexplorer.nomoredomainsmonster.ru/
 
-# pull request
-https://github.com/CristinaDaily/movies-explorer-frontend/pull/3
+Pull request - https://github.com/CristinaDaily/movies-explorer-frontend/pull/3
 
 
 # Layout
