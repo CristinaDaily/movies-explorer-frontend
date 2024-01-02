@@ -4,22 +4,10 @@ import './MoviesCard.css';
 
 function MoviesCard({ movie, onLike, onDelete }) {
   
-  const [ isHovered, setIsHovered ] = useState(false);
   const [ isLiked, setIsLiked ] = useState(movie.liked);
   const location = useLocation();
   const moviePage = location.pathname === '/movies';
   const savedMoviesPage =location.pathname ==='/saved-movies';
-
-  const handleMouseEnter = () => {
-    if (savedMoviesPage) {
-      setIsHovered(true);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    
-  };
 
   const handleLikeClick = () => {
     if(isLiked){
@@ -54,8 +42,7 @@ function MoviesCard({ movie, onLike, onDelete }) {
   return (
     <article 
       className='element'
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      
     >
       <img
         className='element__image'
@@ -74,7 +61,7 @@ function MoviesCard({ movie, onLike, onDelete }) {
           <button
             type='button'
             onClick={hadleDeleteClick}
-            className= {`element__deleteCard-btn ${isHovered &&'element__deleteCard-btn_active'}`}
+            className= 'element__deleteCard-btn element__deleteCard-btn_active'
           ></button>)}      
       </div>
       <div className='element__line'></div>

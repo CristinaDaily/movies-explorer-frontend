@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import { filtereMoviesFromSearch, filterShortMovies } from '../../utils/filterMovies.js';
+import * as api from '../../utils/MainApi';
 
 
 function SavedMovies({ loggedIn, savedMovies, onDelete, isLoading, setIsLoading , showInputError, setShowInputError, error, setError }) {
@@ -59,6 +60,13 @@ function SavedMovies({ loggedIn, savedMovies, onDelete, isLoading, setIsLoading 
     }
   }
 
+  function handleMovieDelete (movieToDelete) {
+    console.log(movieToDelete)
+    
+    onDelete(movieToDelete)
+  }
+
+ 
   useEffect(()=>{
     const filteredShortMovies =  filterShortMovies(filteredSavedMovies, isCheckedSaved)
     setSavedMovieData(filteredShortMovies)
@@ -75,9 +83,19 @@ function SavedMovies({ loggedIn, savedMovies, onDelete, isLoading, setIsLoading 
   }, [ savedMovieData ])
 
   useEffect(()=>{
-    setSavedMovieData(savedMovies);
-    setFilteredSavedMovies(savedMovies);  
- },[ savedMovies ])
+    //setSavedMovieData(savedMovies);
+    //setFilteredSavedMovies(savedMovies);  
+    
+ },[savedMovieData])
+
+ useEffect(()=>{
+  setSavedMovieData(savedMovies);
+  setFilteredSavedMovies(savedMovies)
+  console.log(savedMovieData)
+ },[savedMovieData])
+
+
+
 
 
   return (
@@ -94,7 +112,7 @@ function SavedMovies({ loggedIn, savedMovies, onDelete, isLoading, setIsLoading 
         />
         <MoviesCardList 
           moviesToShow={savedMovieData} 
-          onDelete={onDelete} 
+          onDelete={handleMovieDelete} 
           isLoading={isLoading}
           isNoResults={isNoResultsShortMovies} 
           error={error}/>

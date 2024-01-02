@@ -91,21 +91,21 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
     let cardsInitialToShow;
     let additionalCards;
 
-    if (screenWidth >= SCREEN_WIDTH_LAPTOP_MIN) {// >1280
-      cardsInitialToShow = INITIAL_NUMBER_OF_CARDS_1280; //16
-      additionalCards = ADDITIONAL_CARDS_1280;//4
+    if (screenWidth >= SCREEN_WIDTH_LAPTOP_MIN) {
+      cardsInitialToShow = INITIAL_NUMBER_OF_CARDS_1280; 
+      additionalCards = ADDITIONAL_CARDS_1280;
     }
      
     if (screenWidth > SCREEN_WIDTH_TABLET && screenWidth < SCREEN_WIDTH_LAPTOP_MIN) {
       cardsInitialToShow = INITIAL_NUMBER_OF_CARDS_768;
       additionalCards = ADDITIONAL_CARDS_768;  
     }
-    if (screenWidth<= SCREEN_WIDTH_TABLET && screenWidth > SCREEN_WIDTH_MOBILE) {
+    if (screenWidth <= SCREEN_WIDTH_TABLET && screenWidth > SCREEN_WIDTH_MOBILE) {
       cardsInitialToShow = INITIAL_NUMBER_OF_CARDS_768;
       additionalCards = ADDITIONAL_CARDS_768; 
     }
 
-    if(screenWidth<= SCREEN_WIDTH_MOBILE){
+    if(screenWidth <= SCREEN_WIDTH_MOBILE){
       cardsInitialToShow = INITIAL_NUMBER_OF_CARDS_320;
       additionalCards = ADDITIONAL_CARDS_320;  
     }
