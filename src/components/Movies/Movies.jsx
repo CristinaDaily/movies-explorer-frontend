@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import movieApi from '../../utils/MoviesApi.js';
 import { useLocalStorageState } from '../../utils/hooks.js';
-import { INITIAL_NUMBER_OF_CARDS_1280, INITIAL_NUMBER_OF_CARDS_768, INITIAL_NUMBER_OF_CARDS_320, ADDITIONAL_CARDS_1280, ADDITIONAL_CARDS_768, ADDITIONAL_CARDS_320, SCREEN_WIDTH_LAPTOP, SCREEN_WIDTH_TABLET, SCREEN_WIDTH_MOBILE, SCREEN_WIDTH_LAPTOP_MIN,
+import { INITIAL_NUMBER_OF_CARDS_1280, INITIAL_NUMBER_OF_CARDS_768, INITIAL_NUMBER_OF_CARDS_320, ADDITIONAL_CARDS_1280, ADDITIONAL_CARDS_768, ADDITIONAL_CARDS_320, SCREEN_WIDTH_TABLET, SCREEN_WIDTH_MOBILE, SCREEN_WIDTH_LAPTOP_MIN,
 } from '../../utils/constants.js'
 import { filtereMoviesFromSearch, filterShortMovies } from '../../utils/filterMovies.js';
 

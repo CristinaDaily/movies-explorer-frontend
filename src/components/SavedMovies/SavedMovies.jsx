@@ -92,7 +92,7 @@ function SavedMovies({ loggedIn, savedMovies, onDelete, isLoading, setIsLoading 
   setSavedMovieData(savedMovies);
   setFilteredSavedMovies(savedMovies)
   console.log(savedMovieData)
- },[savedMovieData])
+ },[savedMovies])
 
 
 

@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 import logo from '../../images/logo.svg';
 import { useFormWithValidation } from '../../utils/formValidation';
 
 
-function Register({ onRegister }) {
+function Register({ onRegister, loggedIn }) {
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
   const {name, email, password} = values;
   const [registretionMessage, setRegistretionMessage] = React.useState('');
+
+  const navigate = useNavigate();
 
   useEffect(()=>{
     resetForm();
@@ -33,6 +35,12 @@ function Register({ onRegister }) {
    })
   }
 
+  useEffect(() => {
+    if(loggedIn){
+      navigate ('/movies')
+    }
+    })
+    
 
 
     return (

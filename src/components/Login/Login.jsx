@@ -1,14 +1,17 @@
 import React , { useState, useEffect }from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormWithValidation } from '../../utils/formValidation';
 import logo from '../../images/logo.svg'
 import './Login.css';
 
-function Login({ onLogin }) {
+function Login({ onLogin, loggedIn }) {
   
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
   const [ loginError, setLoginError ] = useState('');
   const { email, password } = values;
+  
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     resetForm();
@@ -25,6 +28,13 @@ function Login({ onLogin }) {
       }     
     })
   }
+
+  useEffect(() => {
+  if(loggedIn){
+    navigate ('/movies')
+  }
+  })
+  
   
   return (
     <main className='login'>

@@ -1,7 +1,7 @@
 import React,  { useState, useEffect } from 'react';
 import './App.css';
 import { Routes, Route, useNavigate} from 'react-router-dom';
-import {useLocation} from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import ProtectedRoute from '../ProtectedRoute';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 import Main from '../Main/Main'
@@ -117,6 +117,8 @@ function App() {
       }
   }, [loggedIn])
 
+  
+
   // Actions with movies and profile: save, delete, like, profile edit
 
   const handleMovieSave = (movie) =>{
@@ -191,8 +193,8 @@ function App() {
         setError={setError} 
         isLoading={isLoading}
         setIsLoading={setIsLoading} />} />
-     <Route path="/signin" element={< Login onLogin={handleLogin} />} />
-     <Route path="/signup" element={< Register onRegister={handleRegister}  />} />
+     <Route path="/signin" element={< Login onLogin={handleLogin} loggedIn={loggedIn} />} />
+     <Route path="/signup" element={< Register onRegister={handleRegister} loggedIn={loggedIn} />} />
      <Route path="/profile" 
       element={<ProtectedRoute element={Profile}
         loggedIn={loggedIn} 
