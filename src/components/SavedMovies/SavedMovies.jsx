@@ -7,7 +7,7 @@ import { filtereMoviesFromSearch, filterShortMovies } from '../../utils/filterMo
 import * as api from '../../utils/MainApi';
 
 
-function SavedMovies({ loggedIn, savedMovies, onDelete, isLoading, setIsLoading , showInputError, setShowInputError, error, setError }) {
+function SavedMovies({ loggedIn, savedMovies, isLoading, setIsLoading , showInputError, setShowInputError, error, setError, setSavedMovies }) {
   
   const [ searchQuerySavedMov, setSearchQuerySavedMov] = useState('');//serch in saved-movie page
   const [ savedMovieData, setSavedMovieData ]= useState([]) 
@@ -61,10 +61,22 @@ function SavedMovies({ loggedIn, savedMovies, onDelete, isLoading, setIsLoading 
   }
 
   function handleMovieDelete (movieToDelete) {
-    console.log(movieToDelete)
     
-    onDelete(movieToDelete)
+    const foundMovie = savedMovies.find((movie) => { 
+      return movie.movieId === movieToDelete.movieId
+    })
+      
+    api.deleteSavedMovie(foundMovie._id)
+    .then((res) => {
+      setSavedMovies(savedMovies.filter((movie) => movie.movieId !== movieToDelete.movieId));
+      movieToDelete.liked = false;
+      setSavedMovieData(savedMovieData.filter((movie) => movie.movieId !== movieToDelete.movieId));
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
+  
 
  
   useEffect(()=>{
@@ -82,18 +94,16 @@ function SavedMovies({ loggedIn, savedMovies, onDelete, isLoading, setIsLoading 
     }
   }, [ savedMovieData ])
 
-  useEffect(()=>{
-    //setSavedMovieData(savedMovies);
-    //setFilteredSavedMovies(savedMovies);  
-    
- },[savedMovieData])
 
  useEffect(()=>{
   setSavedMovieData(savedMovies);
-  setFilteredSavedMovies(savedMovies)
-  console.log(savedMovieData)
- },[savedMovies])
+  setFilteredSavedMovies(savedMovies);
+  console.log('рендер')
 
+  
+ },[])
+ 
+ 
 
 
 

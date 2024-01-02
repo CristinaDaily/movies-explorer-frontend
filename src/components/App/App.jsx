@@ -26,9 +26,9 @@ function App() {
   const [ showInputError, setShowInputError ] = useState(false); // ошибка пустого поля поиска
   const [ searchPerformed, setSearchPerformed ] = useState(false);
   const [ error, setError ]= useState(null); // ошибка в процессе получения и обработки данных 
-  const [ registrationErr, setRegistrationErr ] = useState('');
   const [ isLoading, setIsLoading ] = useState(false); // preloader
   const [ isInfoPopupOpen, setisInfoPopupOpen ] = useState(false); // попап с информацией об успешном редактировании профайла
+   
   
   const navigate = useNavigate();
   const location = useLocation();
@@ -189,11 +189,13 @@ function App() {
         showInputError={showInputError}
         setShowInputError={setShowInputError}
         savedMovies={savedMovies} 
-        onDelete={handleMovieDelete}
         error={error}
         setError={setError} 
         isLoading={isLoading}
-        setIsLoading={setIsLoading} />} />
+        setIsLoading={setIsLoading} 
+        setSavedMovies = {setSavedMovies}
+        
+        />} />
      <Route path="/signin" element={< Login onLogin={handleLogin} loggedIn={loggedIn} />} />
      <Route path="/signup" element={< Register onRegister={handleRegister} loggedIn={loggedIn} />} />
      <Route path="/profile" 

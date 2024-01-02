@@ -12,7 +12,7 @@ function Profile({ onSignout, loggedIn, onEditProfile, isPopupOpen, onClosePopup
   const currentUser = useContext(CurrentUserContext);
   const{ name, email } = values;
 
-  console.log(registrationErr)
+  
 
   React.useEffect(() => {
     resetForm(currentUser);
