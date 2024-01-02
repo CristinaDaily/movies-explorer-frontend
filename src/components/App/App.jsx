@@ -26,6 +26,7 @@ function App() {
   const [ showInputError, setShowInputError ] = useState(false); // ошибка пустого поля поиска
   const [ searchPerformed, setSearchPerformed ] = useState(false);
   const [ error, setError ]= useState(null); // ошибка в процессе получения и обработки данных 
+  const [ registrationErr, setRegistrationErr ] = useState('');
   const [ isLoading, setIsLoading ] = useState(false); // preloader
   const [ isInfoPopupOpen, setisInfoPopupOpen ] = useState(false); // попап с информацией об успешном редактировании профайла
   
@@ -159,7 +160,7 @@ function App() {
         setCurrentUser(updatedUser)
         handlePopupOpen();
       }).catch((err) => {
-        console.log(`Ошибка редактировани профайла:${err}`)
+        console.log(`Ошибка редактирования профайла: ${err}`)
       })
   }
 
@@ -201,7 +202,9 @@ function App() {
         onSignout ={handleSignout}
         onEditProfile={handleEditProfile} 
         isPopupOpen ={isInfoPopupOpen}
-        onClosePopup={closePopup}/>} />
+        onClosePopup={closePopup}
+        />
+     }/>
      <Route path="*" element={< NotFound />} />
    </Routes>
    </div>

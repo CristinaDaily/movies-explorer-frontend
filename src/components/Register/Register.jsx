@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 import logo from '../../images/logo.svg';
@@ -7,8 +7,9 @@ import { useFormWithValidation } from '../../utils/formValidation';
 
 function Register({ onRegister, loggedIn }) {
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
-  const {name, email, password} = values;
-  const [registretionMessage, setRegistretionMessage] = React.useState('');
+  const { name, email, password } = values;
+  const [ registretionMessage, setRegistretionMessage ] = React.useState('');
+  const [ isLoading, setIsLoading ] = useState(false);
 
   const navigate = useNavigate();
 
@@ -19,7 +20,8 @@ function Register({ onRegister, loggedIn }) {
   
   function handleSubmit(e) {
     e.preventDefault();
-    setRegistretionMessage('')
+    setRegistretionMessage('');
+    setIsLoading(true);
 
     onRegister({name, email, password}).catch((err) => {
       console.log(`Registration error:${err} `);
@@ -32,6 +34,9 @@ function Register({ onRegister, loggedIn }) {
       if (err === 'Error: 500' ){
         setRegistretionMessage('Ошибка сервера')
       }
+   })
+   .finally(() => {
+    setIsLoading(false);
    })
   }
 
@@ -65,8 +70,9 @@ function Register({ onRegister, loggedIn }) {
            pattern = '^[A-Za-zА-Яа-я \-]+$'
            value={values.name || ''}
            onChange={handleChange}
-           className='register__input register__input_type_name'>
-          </input>  
+           className='register__input register__input_type_name'
+           disabled={isLoading}
+           /> 
           <span className='register__error' id='name-register-error'>{errors.name || ''}</span>    
           <label htmlFor='email-register' className='register__label'>
            Email
@@ -81,6 +87,7 @@ function Register({ onRegister, loggedIn }) {
            value={values.email || ''}
            onChange={handleChange}
            className='register__input register__input_type_email'
+           disabled={isLoading}
           />
           <span className='register__error' id='email-register-error'>
             {errors.email || ''}
@@ -94,18 +101,17 @@ function Register({ onRegister, loggedIn }) {
            name='password'
            type='password'
            placeholder='Пароль'
-           
            value = {values.password || ''}
            onChange={handleChange}
            className='register__input register__input_type_password'
-           
+           disabled={isLoading}
           />
           <span className='register__error' id='password-register-error'>
             {errors.password}
           </span>
           <p className='regiater__error_type_final'>{registretionMessage}</p>
-          <button type='submit' className={`register__button button ${!isValid && 'register__button_disabled'}`} disabled={!isValid}>
-          Зарегистрироваться
+          <button type='submit' className={`register__button button ${!isValid && 'register__button_disabled'}`} disabled={!isValid || isLoading}>
+          {isLoading ? 'Регистрация' : 'Зарегистрироваться' }
           </button>
        </form>
       <div className='register__signin'>

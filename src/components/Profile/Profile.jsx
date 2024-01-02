@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useFormWithValidation } from '../../utils/formValidation';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 import './Profile.css'
@@ -11,6 +11,8 @@ function Profile({ onSignout, loggedIn, onEditProfile, isPopupOpen, onClosePopup
   const [ isInputsChanged, setIsInputsChanged ] = React.useState(false);
   const currentUser = useContext(CurrentUserContext);
   const{ name, email } = values;
+
+  console.log(registrationErr)
 
   React.useEffect(() => {
     resetForm(currentUser);

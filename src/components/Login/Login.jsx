@@ -9,6 +9,7 @@ function Login({ onLogin, loggedIn }) {
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
   const [ loginError, setLoginError ] = useState('');
   const { email, password } = values;
+  const [isLoading, setIsLoading] = useState(false);
   
   const navigate = useNavigate();
 
@@ -19,6 +20,7 @@ function Login({ onLogin, loggedIn }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
 
     onLogin({ email, password }).catch((err) => {
       if(err === 'Error: 401') {
@@ -26,6 +28,9 @@ function Login({ onLogin, loggedIn }) {
       } else {
         setLoginError(err)
       }     
+    })
+    .finally(()=>{
+      setIsLoading(false);
     })
   }
 
@@ -56,6 +61,7 @@ function Login({ onLogin, loggedIn }) {
           value={values.email || ''}
           onChange={handleChange}
           className='register__input register__input_type_email'
+          disabled={isLoading}
         />
         <span className='register__error' id='email-register-error'>{errors.email || ''}</span>
         <label htmlFor='password-register' className='register__label'>
@@ -70,12 +76,13 @@ function Login({ onLogin, loggedIn }) {
           value = {values.password || ''}
           onChange={handleChange}
           className='register__input register__input_type_password'
+          disabled={isLoading}
         />
         <span className='register__error' id='password-register-error'>
           {errors.password}</span>
         <p className='loggin__error'>{loginError}</p>
-        <button type='submit'  className={`login__button button ${!isValid && 'login__button_disabled'}`} disabled={!isValid}>
-        Войти
+        <button type='submit'  className={`login__button button ${!isValid && 'login__button_disabled'}`} disabled={!isValid || isLoading}>
+        {isLoading ? 'Загрузка...' : 'Войти'}
         </button>
       </form>
       <div className='register__signin'>
