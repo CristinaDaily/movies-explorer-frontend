@@ -98,15 +98,8 @@ function SavedMovies({ loggedIn, savedMovies, isLoading, setIsLoading , showInpu
  useEffect(()=>{
   setSavedMovieData(savedMovies);
   setFilteredSavedMovies(savedMovies);
-  console.log('рендер')
-
-  
  },[])
  
- 
-
-
-
 
   return (
     <>
