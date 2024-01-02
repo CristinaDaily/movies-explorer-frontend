@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import movieApi from '../../utils/MoviesApi.js';
 import { useLocalStorageState } from '../../utils/hooks.js';
-import { INITIAL_NUMBER_OF_CARDS_1280, INITIAL_NUMBER_OF_CARDS_768, INITIAL_NUMBER_OF_CARDS_320, ADDITIONAL_CARDS_1280, ADDITIONAL_CARDS_768, ADDITIONAL_CARDS_320, SCREEN_WIDTH_LAPTOP, SCREEN_WIDTH_TABLET
+import { INITIAL_NUMBER_OF_CARDS_1280, INITIAL_NUMBER_OF_CARDS_768, INITIAL_NUMBER_OF_CARDS_320, ADDITIONAL_CARDS_1280, ADDITIONAL_CARDS_768, ADDITIONAL_CARDS_320, SCREEN_WIDTH_LAPTOP, SCREEN_WIDTH_TABLET, SCREEN_WIDTH_MOBILE, SCREEN_WIDTH_LAPTOP_MIN,
 } from '../../utils/constants.js'
 import { filtereMoviesFromSearch, filterShortMovies } from '../../utils/filterMovies.js';
 
@@ -91,18 +91,23 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
     let cardsInitialToShow;
     let additionalCards;
 
-    if (screenWidth >= SCREEN_WIDTH_LAPTOP) {
-      cardsInitialToShow = INITIAL_NUMBER_OF_CARDS_1280;
-      additionalCards = ADDITIONAL_CARDS_1280;
+    if (screenWidth >= SCREEN_WIDTH_LAPTOP_MIN) {// >1280
+      cardsInitialToShow = INITIAL_NUMBER_OF_CARDS_1280; //16
+      additionalCards = ADDITIONAL_CARDS_1280;//4
     }
-
-    if (screenWidth > SCREEN_WIDTH_TABLET && screenWidth < SCREEN_WIDTH_LAPTOP) {
+     
+    if (screenWidth > SCREEN_WIDTH_TABLET && screenWidth < SCREEN_WIDTH_LAPTOP_MIN) {
       cardsInitialToShow = INITIAL_NUMBER_OF_CARDS_768;
       additionalCards = ADDITIONAL_CARDS_768;  
     }
-    if (screenWidth<= SCREEN_WIDTH_TABLET) {
+    if (screenWidth<= SCREEN_WIDTH_TABLET && screenWidth > SCREEN_WIDTH_MOBILE) {
+      cardsInitialToShow = INITIAL_NUMBER_OF_CARDS_768;
+      additionalCards = ADDITIONAL_CARDS_768; 
+    }
+
+    if(screenWidth<= SCREEN_WIDTH_MOBILE){
       cardsInitialToShow = INITIAL_NUMBER_OF_CARDS_320;
-      additionalCards = ADDITIONAL_CARDS_320; 
+      additionalCards = ADDITIONAL_CARDS_320;  
     }
       
     if (visibleCards > cardsInitialToShow) {
