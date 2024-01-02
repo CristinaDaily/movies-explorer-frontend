@@ -2,7 +2,7 @@ import React from 'react';
 import './Promo.css';
 import landingLogo from '../../../images/landing-logo.png';
 
-function Promo(props) {
+function Promo() {
     return (
         <section className="promo">
                <div className='promo__wrapper'>

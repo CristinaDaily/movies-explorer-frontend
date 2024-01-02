@@ -5,6 +5,7 @@
   width: 396px;
   margin:  70px auto  auto;
   height: 100%;
+  box-sizing: border-box;
   
 
 }
@@ -56,6 +57,7 @@
   line-height: 12px;
   margin-top: 6px;
   margin-bottom: 5px;
+  box-sizing: border-box;
 
 }
 
@@ -76,10 +78,23 @@
     box-sizing: border-box;
     display: block;
     width: 100%;
+    
+  }
+  
+  .regiater__error_type_final{
+    margin-top: 107px;
+    margin-bottom:10px;
+    height: 17px;
+    color:#ff0000;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    text-align: center;
   }
 
   .register__button {
-    margin-top: 134px;
+    margin-top: 0;
     height: 45px;
     width: 100%;
     color: rgba(255, 255, 255, 1);
@@ -93,6 +108,12 @@
     padding: 0;
     cursor: pointer;
   }
+  .register__button_disabled {
+    background-color:#F8F8F8;
+    color: #C2C2C2
+  }
+
+
 
   .register__signin {
     display: flex;

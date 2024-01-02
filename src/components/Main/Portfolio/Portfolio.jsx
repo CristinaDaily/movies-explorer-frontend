@@ -27,7 +27,7 @@ function Portfolio() {
                 </li >
                 <li className='portfolio__item'>
                 <a href="https://github.com/CristinaDaily/russian-travel" className="portfolio__link  link" target="_blank" rel="noreferrer" >
-                <sapn>Адаптивный сайт</sapn>
+                <span>Адаптивный сайт</span>
                 <img src={arrowIcon} alt="иконка для перехода"  className='portfolio__icon'/>
                 </a>
                 </li>
