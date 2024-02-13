@@ -4,21 +4,21 @@ import './AboutProject.css';
 function AboutProject() {
     return (
         <section className="project section" id='aboutProject'>
-                <h2 className="section__title">О проекте</h2>
+                <h2 className="section__title">About the Project</h2>
                 <div className='section__dividing-line'></div>
                 <article className="description">
                     <div className='description__column'>
-                        <h3 className="desctiption__title">Дипломный проект включал 5 этапов</h3>
-                        <p className="desctiption__paragraph">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
+                        <h3 className="desctiption__title">The diploma project consisted of 5 stages</h3>
+                        <p className="desctiption__paragraph">Planning, backend development, frontend design, feature implementation, and final adjustments.</p>
                     </div>
                     <div className='description__column'>
-                        <h3 className="desctiption__title">На выполнение диплома ушло 5 недель</h3>
-                        <p className="desctiption__paragraph">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
+                        <h3 className="desctiption__title">The project took 5 weeks to complete</h3>
+                        <p className="desctiption__paragraph">Each stage had a deadline that had to be met in order to successfully complete the project.</p>
                     </div>
                 </article>
                 <div className="timeline">
-                    <div className='timeline__component timeline__component_type_backend'>1 неделя</div>
-                    <div className='timeline__component timeline__component_type_frontend'>4 недели</div>
+                    <div className='timeline__component timeline__component_type_backend'>1 week</div>
+                    <div className='timeline__component timeline__component_type_frontend'>4 weeks</div>
                     <p className="timeline__subtitle">Back-end</p>
                     <p className="timeline__subtitle">Front-end</p>
                 </div>

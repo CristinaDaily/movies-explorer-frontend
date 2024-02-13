@@ -46,7 +46,7 @@ function Login({ onLogin, loggedIn }) {
       <Link to="/" className="register__logo logo">
         <img src={logo} alt="Лого" />
       </Link>
-      <h2 className="register__title">Рады видеть!</h2>
+      <h2 className="register__title">Welcome back!</h2>
       <form className='register__form' onSubmit={handleSubmit}> 
         <label htmlFor='email-register' className='register__label'>
           Email
@@ -65,14 +65,14 @@ function Login({ onLogin, loggedIn }) {
         />
         <span className='register__error' id='email-register-error'>{errors.email || ''}</span>
         <label htmlFor='password-register' className='register__label'>
-          Пароль
+          Password
         </label>
         <input
           required
           id='password-register'
           name='password'
           type='password'
-          placeholder='Пароль'
+          placeholder='password'
           value = {values.password || ''}
           onChange={handleChange}
           className='register__input register__input_type_password'
@@ -82,13 +82,13 @@ function Login({ onLogin, loggedIn }) {
           {errors.password}</span>
         <p className='loggin__error'>{loginError}</p>
         <button type='submit'  className={`login__button button ${!isValid && 'login__button_disabled'}`} disabled={!isValid || isLoading}>
-        {isLoading ? 'Загрузка...' : 'Войти'}
+        {isLoading ? 'Loading...' : 'Sign In'}
         </button>
       </form>
       <div className='register__signin'>
-        <p className='register__question'>Ещё не зарегистрированы?</p>
+        <p className='register__question'>Dont have an account?</p>
         <Link to='/signup' className='register__link link'>
-          Регистрация
+          Sign Up
         </Link>
       </div>
     </main>

@@ -206,7 +206,7 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
     <>
     < Header loggedIn={loggedIn} />
     <main className='content' >
-      < SearchForm placeholder="Фильм" 
+      < SearchForm placeholder="Movie" 
         value={searchQuery} 
         onChange={handleInputChange} 
         handleChange={handleChange}
@@ -222,7 +222,7 @@ function Movies ({ loggedIn, onLike, onDelete, savedMovies,  showInputError, set
         onDelete={onDelete} 
         moviesToShow={cardToShowLikeStatus}
       />
-      <button className={`content__add-btn button ${movieData.length <= visibleCards ? 'content__add-btn_disabled' : ''}`} onClick={getMoreCards} >Ещё</button>
+      <button className={`content__add-btn button ${movieData.length <= visibleCards ? 'content__add-btn_disabled' : ''}`} onClick={getMoreCards} >More</button>
     </main>
     < Footer />
     </>

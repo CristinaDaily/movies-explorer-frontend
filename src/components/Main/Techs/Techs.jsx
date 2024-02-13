@@ -5,10 +5,10 @@ function Techs() {
     return (
         <section className="technologies">
             <div className='section'>   
-            <h2 className="section__title">Технологии</h2>
+            <h2 className="section__title">Tools and stack</h2>
             <div className='section__dividing-line'></div>
-            <h3 className='technologies__title'>7 технологий</h3>
-            <p className="technologies__subtitle">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
+            <h3 className='technologies__title'> 7 Technologies</h3>
+            <p className="technologies__subtitle">Throughout the training program, I learned multiple frameworks and technologies which were applied in this project.</p>
             <ul className="technologies__list list">
                 <li>
                     <div className='technologies__item '>HTML</div>
