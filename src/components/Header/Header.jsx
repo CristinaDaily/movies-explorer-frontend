@@ -72,9 +72,9 @@ function Header({ loggedIn }) {
         )
       ) : (
         <nav className='header__navigation'>
-          <Link to='/signup' className="header__registration link">Регистрация</Link>
+          <Link to='/signup' className="header__registration link">Sign Up</Link>
           <button className='header__loggin'>
-          <Link to='/signin' className="link header__loggin_type_btn">Войти</Link>
+          <Link to='/signin' className="link header__loggin_type_btn">Log In</Link>
           </button>
         </nav> 
       )}

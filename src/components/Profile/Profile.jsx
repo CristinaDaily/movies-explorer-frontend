@@ -46,11 +46,11 @@ function Profile({ onSignout, loggedIn, onEditProfile, isPopupOpen, onClosePopup
       <Header loggedIn={loggedIn}/>
       <main >
         <section className='profile'>
-          <h2 className="profile__title">Привет, {currentUser.name}!</h2>
+          <h2 className="profile__title">Hello, {currentUser.name}!</h2>
           <form className='profile__form' onSubmit={handleSubmit}>
           <div className='popup__container'>       
             <label htmlFor='name-profile' className='profile__label'>
-            Имя
+            Name
             </label>        
             <input
               required
@@ -59,7 +59,7 @@ function Profile({ onSignout, loggedIn, onEditProfile, isPopupOpen, onClosePopup
               type='text'
               value={values.name || ''}
               onChange={handleChange}
-              placeholder='Введите имя'
+              placeholder='Enter your name'
               minLength= '2'
               maxLength= '30'
               pattern = '^[A-Za-zА-Яа-я \-]+$'
@@ -78,7 +78,7 @@ function Profile({ onSignout, loggedIn, onEditProfile, isPopupOpen, onClosePopup
             name='email'
             type='email'
             value={values.email || ''}
-            placeholder="Введите email"
+            placeholder="Enter your email"
             className='profile__input profile__input_type_email'
             onChange={handleChange}
             pattern='^[a-zA-Z0-9_.\-]+@[a-zA-Z0-9_]+\.[a-z]{2,6}$'
@@ -86,9 +86,9 @@ function Profile({ onSignout, loggedIn, onEditProfile, isPopupOpen, onClosePopup
         </div>
         <span className='register__error' id='name-profile-error'>{errors.email || ''}</span> 
         <span className='profile__error'></span>
-        <button className={`profile__edit-btn ${(!isValid || !isInputsChanged)? 'profile__edit-btn_type_disabled':''}`} type='submit' disabled={!isInputsChanged || !isValid}>Редактировать</button>
+        <button className={`profile__edit-btn ${(!isValid || !isInputsChanged)? 'profile__edit-btn_type_disabled':''}`} type='submit' disabled={!isInputsChanged || !isValid}>Edit profile</button>
         </form>
-        <button className="profile__exit " onClick={onSignout}>Выйти из аккаунта</button>
+        <button className="profile__exit " onClick={onSignout}>Sign Out</button>
         
         </section>
       </main>
@@ -107,7 +107,7 @@ function Profile({ onSignout, loggedIn, onEditProfile, isPopupOpen, onClosePopup
               className='popupInfo__icon'
             ></img>
           <h2 className='popupInfo__message'>
-            Данные успешно сохранены!
+            Information has been successfully saved!
           </h2>
         </div>
       </div>

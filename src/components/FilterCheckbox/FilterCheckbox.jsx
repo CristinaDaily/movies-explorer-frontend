@@ -16,7 +16,7 @@ function FilterCheckbox({ onChange, isChecked }){
     />
     <span className="filter__slider "></span>
     </div>
-    Короткометражки</label> 
+    Short films</label> 
   );
 }
 

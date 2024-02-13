@@ -54,17 +54,17 @@ function Register({ onRegister, loggedIn }) {
           <img src={logo} alt="Лого" />
           </Link>
             
-        <h2 className="register__title">Добро пожаловать!</h2>
+        <h2 className="register__title">Welcome!</h2>
         <form className='register__form' onSubmit={handleSubmit}>
           <label htmlFor='name-register' className='register__label'>
-            Имя
+            Name
           </label>        
           <input
            required
            id='name-register'
            name='name'
            type='text'
-           placeholder='Имя'
+           placeholder='Name'
            minLength= '2'
            maxLength= '30'
            pattern = '^[A-Za-zА-Яа-я \-]+$'
@@ -93,14 +93,14 @@ function Register({ onRegister, loggedIn }) {
             {errors.email || ''}
             </span>
           <label htmlFor='password-register' className='register__label'>
-           Пароль
+           Password
           </label>
           <input
            required
            id='password-register'
            name='password'
            type='password'
-           placeholder='Пароль'
+           placeholder='Password'
            value = {values.password || ''}
            onChange={handleChange}
            className='register__input register__input_type_password'
@@ -111,13 +111,13 @@ function Register({ onRegister, loggedIn }) {
           </span>
           <p className='regiater__error_type_final'>{registretionMessage}</p>
           <button type='submit' className={`register__button button ${!isValid && 'register__button_disabled'}`} disabled={!isValid || isLoading}>
-          {isLoading ? 'Регистрация' : 'Зарегистрироваться' }
+          {isLoading ? 'Creating account' : 'Register' }
           </button>
        </form>
       <div className='register__signin'>
-        <p className='register__question'>Уже зарегистрированы?</p>
+        <p className='register__question'>Do you alredy have an accunt?</p>
         <Link to='/signin' className='register__link link'>
-          Войти
+          Sign In
         </Link>
       </div>
         </main>

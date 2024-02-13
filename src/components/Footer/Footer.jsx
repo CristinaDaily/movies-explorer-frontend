@@ -5,7 +5,7 @@ function Footer() {
     
   return (
     <footer className='footer'>
-      <h3 className='footer__copyright'>Учебный проект Яндекс.Практикум х BeatFilm.</h3>
+      <h3 className='footer__copyright'>Yandex.Practicum project х BeatFilm.</h3>
       <div className='footer__line' ></div>
       <div className='footer__container'>
       <p className='footer__date'>© 2023</p>
@@ -14,7 +14,7 @@ function Footer() {
           <a href="https://practicum.yandex.ru"
              target="_blank"
              rel="noreferrer"
-             className="footer__link link">Яндекс.Практикум</a>
+             className="footer__link link">Yandex.Practicum</a>
         </li>
         <li>
           <a href="https://github.com/CristinaDaily"

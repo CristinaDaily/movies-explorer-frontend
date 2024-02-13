@@ -18,15 +18,15 @@ function Menu({ isOpen, onClose, isActiveLink }) {
         <ul className="menu__container">
           <li className="link">
             <a href="/" 
-               className={`menu__item link ${isActiveLink('/') && 'menu__item_active'}`}>Главная</a>
+               className={`menu__item link ${isActiveLink('/') && 'menu__item_active'}`}>Main page</a>
           </li>
           <li className="link">
             <a href="/movies" 
-               className={`menu__item link ${isActiveLink('/movies') && 'menu__item_active'}`}>Фильмы</a>
+               className={`menu__item link ${isActiveLink('/movies') && 'menu__item_active'}`}>Movies</a>
           </li>
           <li className="link">
             <a href="/saved-movies" 
-                className={`menu__item link ${isActiveLink('/saved-movies') && 'menu__item_active'}`}>Сохранённые фильмы</a>
+                className={`menu__item link ${isActiveLink('/saved-movies') && 'menu__item_active'}`}>Saved movies</a>
           </li>
         </ul>
           <Link to='/profile' className='link'>
@@ -34,7 +34,7 @@ function Menu({ isOpen, onClose, isActiveLink }) {
             <div className='round round_type_movieapp'>
               <img src={accountIcon} alt="Иконка профиля" className='navigation__icon' />
             </div>
-            Аккаунт
+            Account
           </button>
           </Link> 
       </div>

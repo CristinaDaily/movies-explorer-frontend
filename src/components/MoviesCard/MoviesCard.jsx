@@ -26,7 +26,7 @@ function MoviesCard({ movie, onLike, onDelete }) {
   const showDudation =(duration) =>{
     const hours = Math.floor(duration / 60);
     const minutes = duration % 60;
-    const durationToShow = hours > 0 ? `${hours}ч ${minutes}м` : `${minutes}м`;
+    const durationToShow = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
     return durationToShow; 
   }
 
