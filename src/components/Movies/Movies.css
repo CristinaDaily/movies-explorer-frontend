@@ -20,6 +20,12 @@
     font-size: 12px;
     line-height: 15px;
     font-weight: 500;
+    
+}
+
+.content__add-btn_disabled {
+  display: none;
+ 
 }
   
   @media screen and (max-width: 767px) {

@@ -5,11 +5,26 @@
     width: 396px;
     margin:  70px auto  auto;
     height: 100%;
+    box-sizing: border-box;
+
+}
+
+.loggin__error{
+  margin-top: 176px;
+  margin-bottom:10px;
+  height: 17px;
+  color:#ff0000;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: center;
+  box-sizing: border-box;
 
 }
 
 .login__button {
-    margin-top: 203px;
+    margin-top: 0;
     height: 45px;
     width: 100%;
     color: rgba(255, 255, 255, 1);
@@ -22,6 +37,11 @@
     border: 0;
     padding: 0;
     cursor: pointer;
+  }
+
+  .login__button_disabled{
+    background-color:#F8F8F8;
+    color: #C2C2C2
   }
 
   @media screen and (max-width: 900px) {
@@ -37,9 +57,8 @@
       margin-top: 56px; 
       width: 260px;
     }
-    .login__button {
-        margin-top: 291px;
-
+    .loggin__error {
+        margin-top: 264px;
     }
     
   }

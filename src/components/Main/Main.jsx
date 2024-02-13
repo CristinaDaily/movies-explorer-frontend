@@ -7,10 +7,11 @@ import AboutProject from './AboutProject/AboutProject';
 import Techs from './Techs/Techs';
 import Portfolio from './Portfolio/Portfolio';
 
-function Main() {
+function Main({ loggedIn }) {
+  
     return (
-        <div className='page'>
-        <Header />
+      <div className='page'>
+        <Header loggedIn={loggedIn}/>
         <main className="landing">
             < Promo />
             < AboutProject />
@@ -18,9 +19,8 @@ function Main() {
             <Portfolio />       
         </main>
         <Footer />
-        </div>
+      </div>
     );
 } 
-
 
 export default Main;
