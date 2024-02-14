@@ -37,6 +37,8 @@ Movies Explorer is a web application with both frontend and backend components. 
 2) copy this project repository and run it with commands  ```npm i``` and ```npm start``` 
 
 # Demo
+https://github.com/CristinaDaily/movies-explorer-frontend/assets/120998918/d716e5e5-7815-4d01-aca3-82372a99df16
+
 
 
 
